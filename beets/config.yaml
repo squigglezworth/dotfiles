@@ -1,0 +1,53 @@
+## My beets config
+# This assumes importing 'dirty' music - it strips all metadata & fetches new cover art
+
+directory: /home/squigz/music/sorted/
+
+per_disc_numbering: yes
+
+import:
+  move: yes
+  from_scratch: yes
+
+# Slightly modified from the defaults
+# simply removes characters instead of replacing with _, allows :, replaces " with ', and replaces … with ...
+# https://beets.readthedocs.io/en/stable/reference/config.html#replace
+replace: {'[\\/]': '', ^\.: '', '[\x00-\x1f]': '', '[<>\?\*\|]': '', \.$: '', \s+$: '', ^\s+: '', ^-: '', '"': '''', '…': '...'}
+
+## Plugin stuff
+plugins: badfiles chroma discogs fetchart inline lastgenre mbsync missing mpdupdate the scrub
+
+lastgenre: # Add up to 3 genres with a minimum popularity of 20
+  auto: yes
+  count: 3
+  min_weight: 20
+fetchart: # HQ only pls
+  auto: yes
+  sources: coverart itunes amazon albumart # filesystem coverart itunes amazon albumart wikipedia google fanarttv lastfm
+  cover_format: PNG
+chroma: # Using AcoustID should be a last resort
+  auto: no
+include: [acoustid.yaml] # This just has an AcoustID API key
+
+## The goods - path stuff!
+paths:
+  default: |
+    %the{$albumartist}/[$year] $album ($albumtypes2)/$discslug/$track $title
+
+item_fields:
+  albumtypes2: |
+    t = {
+    'album': 'Album',
+    'ep': 'EP',
+    'single': 'Single',
+    'soundtrack': 'OST',
+    'live': 'Live',
+    'compilation': 'Anthology',
+    'remix': 'Remix'}
+    
+    return t[albumtype] if albumtype in t else albumtype
+  discslug: |
+    if disctotal > 1:
+      s = f'CD {disc}'
+      s += f' - {disctitle}' if disctitle else ''
+      return s

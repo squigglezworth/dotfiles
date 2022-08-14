@@ -1,0 +1,41 @@
+set $mod mod4
+
+set $mon1 DVI-I-1
+set $mon2 HDMI-0
+set $mon3 DVI-D-0
+
+set $workspace01 "1:Chat"
+set $workspace02 "2:Web"
+set $workspace03 "3:Work"
+set $workspace04 "4:Games"
+set $workspace05 "5:P2P"
+set $workspace06 "6"
+set $workspace07 "7"
+set $workspace08 "8"
+set $workspace09 "9"
+set $workspace10 "10"
+set $workspace1hide "-"
+
+set $workspace11 "2:1"
+set $workspace12 "2:2"
+set $workspace13 "2:3"
+set $workspace14 "2:4"
+set $workspace15 "2:5"
+set $workspace16 "2:6"
+set $workspace17 "2:7"
+set $workspace18 "2:8"
+set $workspace19 "2:9"
+set $workspace20 "2:10"
+set $workspace2hide "--"
+
+set $workspace31 "3:1"
+set $workspace32 "3:2"
+set $workspace33 "3:3"
+set $workspace34 "3:4"
+set $workspace35 "3:5"
+set $workspace36 "3:6"
+set $workspace37 "3:7"
+set $workspace38 "3:8"
+set $workspace39 "3:9"
+set $workspace310 "3:10"
+set $workspace3hide "---"

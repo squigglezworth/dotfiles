@@ -1,0 +1,8 @@
+mapfile -t displays < <(xrandr | grep -P -o "(\d*x\d*\+\d*\+\d*)")
+get_date='`date +"%Y%m%d-%H%M%S"`'
+for (( i=0; i<${#displays[@]}; i++)); do
+  name=`echo ${displays[i]} | cut -d " " -f 1`
+  crop=`echo ${displays[i]} | cut -d " " -f 3`
+  import -window root -bordercolor red -border 1 -crop ${crop} $i.png
+done
+convert +append -background black -bordercolor red -gravity center 0.png 1.png 2.png test.png

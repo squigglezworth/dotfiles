@@ -1,0 +1,94 @@
+# Get current workspace name
+#   i3-msg -t get_workspaces | jq '.[] | select(.focused==true).name' | cut -d "\"" -f2
+# Get current monitor
+#   i3-msg -t get_workspaces | jq '.[] | select(.focused==true).output'
+
+
+# Config
+floating_modifier $mod
+new_window pixel 1
+new_float pixel 1
+workspace_layout tabbed
+hide_edge_borders smart
+mouse_warping none
+focus_follows_mouse yes
+focus_on_window_activation none
+
+# Gaps
+workspace $workspace01 gaps top 80
+workspace $workspace01 gaps bottom 150
+workspace $workspace01 gaps horizontal 90
+
+workspace $workspace03 gaps horizontal 100
+workspace $workspace03 gaps vertical 50
+
+
+# Float some windows
+for_window [class="^Display-im6.q16$"] floating enable, move position center
+for_window [class="^flameshot$"] floating enable, move position center
+for_window [class="^feh$" title="floating"] floating enable, move position center
+for_window [class="^URxvt$" instance="floating"] floating enable, move position center
+for_window [instance="(arandr|Customize Look and Feel|gtk-recordmydesktop|Install user style)"] floating enable
+
+# Steam
+for_window[class="Steam"] floating enable
+
+for_window [class="^Steam$" instance="(^Friends$|Steam - News.*|.* - Chat|^Settings$|.* - event started|.* CD key|^Steam - Self Updater$|^Screenshot Uploader$|^Steam Guard - Computer Authorization Required$|^Steam Keyboard$|Library Folders|library folder)"] floating enable
+
+# Tile some windows
+#for_window [title="EVE"] floating disable
+
+
+# Terminals & Stuff
+bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -name floating
+bindsym Mod1+d exec "rofi -show blezz"
+bindsym Mod1+p exec "rofi -sort -show pass:/home/squigz/.config/rofi/passmenu.sh"
+
+# Scratchpad stuff
+bindsym Mod1+k exec ~/.i3/scratch-top.sh
+bindsym Mod1+v exec ~/.i3/scratch-volume.sh
+bindsym Mod1+m exec ~/.i3/scratch-music.sh
+bindsym Mod1+i exec ~/.i3/scratch-zeal.sh
+#bindsym Mod1+c exec ~/.i3/scratch-calendar.sh
+for_window [class="^URxvt$" instance="^(top|volume|music)$"] floating enable, resize set 1000px 700 px, move position center, move to scratchpad, scratchpad show
+for_window [class="^Zeal$"] floating enable, resize set 1000px 700 px, move position center, move to scratchpad, scratchpad show
+
+# Border size, separate from the title bar size
+for_window [class=".*"] border pixel 1
+
+# Reload config & notify user
+bindsym $mod+Shift+C exec "cat ~/.i3/configs/* > ~/.i3/config; i3-msg reload; notify-send 'i3 config reloaded'"
+
+# Kill the currently-focused window
+bindsym $mod+F12 exec "xdotool getwindowfocus windowkill"
+
+# Lock
+bindsym $mod+l exec xautolock -locknow
+
+# Hide everything
+bindsym $mod+Shift+l workspace $workspace1hide, workspace $workspace2hide, workspace $workspace3hide
+
+# Screenshot stuff
+bindsym $mod+Shift+s --release exec flameshot gui 
+bindsym Print --release exec /home/squigz/dotfiles/bash/scripts/screenshot.sh Active
+
+# Colors
+#   Border = Lines on bottom/top of title bar
+#   Background = Actual border
+#   Indicator = split v/h indicator
+#   Class                   Border  backgr  text    indicator child_border(?)
+client.focused              #3775c2 #3775c2 #ffffff #ffffff
+client.unfocused            #000000 #000000 #000000 #000000
+client.urgent               #000000 #000000 #000000 #000000
+client.focused_inactive     #384B52 #384B52 #000000 #000000
+client.background           #ffffff
+
+# Blank, adjustable title bars
+#   Adjust font size to increase/decrease title bar height
+#   Setting to 0 gives you about a 5 pixel high title bar, which seems to be the smallest it can be with current configuration
+#for_window [title=".*"] title_format "<span></span>"
+font pango:Fira 0
+
+# Startup script
+exec --no-startup-id /home/squigz/.i3/startup.sh 

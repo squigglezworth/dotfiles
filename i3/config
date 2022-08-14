@@ -1,0 +1,289 @@
+set $mod mod4
+
+set $mon1 DVI-I-1
+set $mon2 HDMI-0
+set $mon3 DVI-D-0
+
+set $workspace01 "1:Chat"
+set $workspace02 "2:Web"
+set $workspace03 "3:Work"
+set $workspace04 "4:Games"
+set $workspace05 "5:P2P"
+set $workspace06 "6"
+set $workspace07 "7"
+set $workspace08 "8"
+set $workspace09 "9"
+set $workspace10 "10"
+set $workspace1hide "-"
+
+set $workspace11 "2:1"
+set $workspace12 "2:2"
+set $workspace13 "2:3"
+set $workspace14 "2:4"
+set $workspace15 "2:5"
+set $workspace16 "2:6"
+set $workspace17 "2:7"
+set $workspace18 "2:8"
+set $workspace19 "2:9"
+set $workspace20 "2:10"
+set $workspace2hide "--"
+
+set $workspace31 "3:1"
+set $workspace32 "3:2"
+set $workspace33 "3:3"
+set $workspace34 "3:4"
+set $workspace35 "3:5"
+set $workspace36 "3:6"
+set $workspace37 "3:7"
+set $workspace38 "3:8"
+set $workspace39 "3:9"
+set $workspace310 "3:10"
+set $workspace3hide "---"
+# Various window assignments
+assign [class="(^discord$|^Mumble$|^Slack$|^TeamSpeak 3$)"] $workspace01
+assign [class="^Mumble$"] $workspace01
+assign [class="^URxvt$" instance="(^irc$|^log$|^top$|^ping$)"] $workspace01
+assign [class="^firefox$"] $workspace02
+assign [class="^Pulseeffects$"] $workspace02
+assign [class="^Sublime_text$"] $workspace03
+assign [class="(^Steam$|^steam_app_.*$)"] $workspace04
+assign [class="^plexmediaplayer$"] $workspace11
+
+
+# Define 11 workspaces for each monitor
+workspace $workspace01 output $mon1
+workspace $workspace02 output $mon1
+workspace $workspace03 output $mon1
+workspace $workspace04 output $mon1
+workspace $workspace05 output $mon1
+workspace $workspace06 output $mon1
+workspace $workspace07 output $mon1
+workspace $workspace08 output $mon1
+workspace $workspace09 output $mon1
+workspace $workspace10 output $mon1
+workspace $workspace1hide output $mon1
+
+workspace $workspace11 output $mon2
+workspace $workspace12 output $mon2
+workspace $workspace13 output $mon2
+workspace $workspace14 output $mon2
+workspace $workspace15 output $mon2
+workspace $workspace16 output $mon2
+workspace $workspace17 output $mon2
+workspace $workspace18 output $mon2
+workspace $workspace19 output $mon2
+workspace $workspace20 output $mon2
+workspace $workspace2hide output $mon2
+
+workspace $workspace21 output $mon3
+workspace $workspace22 output $mon3
+workspace $workspace23 output $mon3
+workspace $workspace24 output $mon3
+workspace $workspace25 output $mon3
+workspace $workspace26 output $mon3
+workspace $workspace27 output $mon3
+workspace $workspace28 output $mon3
+workspace $workspace29 output $mon3
+workspace $workspace30 output $mon3
+workspace $workspace3hide output $mon3
+# Get current workspace name
+#   i3-msg -t get_workspaces | jq '.[] | select(.focused==true).name' | cut -d "\"" -f2
+# Get current monitor
+#   i3-msg -t get_workspaces | jq '.[] | select(.focused==true).output'
+
+
+# Config
+floating_modifier $mod
+new_window pixel 1
+new_float pixel 1
+workspace_layout tabbed
+hide_edge_borders smart
+mouse_warping none
+focus_follows_mouse yes
+focus_on_window_activation none
+
+# Gaps
+workspace $workspace01 gaps top 80
+workspace $workspace01 gaps bottom 150
+workspace $workspace01 gaps horizontal 90
+
+workspace $workspace03 gaps horizontal 100
+workspace $workspace03 gaps vertical 50
+
+
+# Float some windows
+for_window [class="^Display-im6.q16$"] floating enable, move position center
+for_window [class="^flameshot$"] floating enable, move position center
+for_window [class="^feh$" title="floating"] floating enable, move position center
+for_window [class="^URxvt$" instance="floating"] floating enable, move position center
+for_window [instance="(arandr|Customize Look and Feel|gtk-recordmydesktop|Install user style)"] floating enable
+
+# Steam
+for_window[class="Steam"] floating enable
+
+for_window [class="^Steam$" instance="(^Friends$|Steam - News.*|.* - Chat|^Settings$|.* - event started|.* CD key|^Steam - Self Updater$|^Screenshot Uploader$|^Steam Guard - Computer Authorization Required$|^Steam Keyboard$|Library Folders|library folder)"] floating enable
+
+# Tile some windows
+#for_window [title="EVE"] floating disable
+
+
+# Terminals & Stuff
+bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -name floating
+bindsym Mod1+d exec "rofi -show blezz"
+bindsym Mod1+p exec "rofi -sort -show pass:/home/squigz/.config/rofi/passmenu.sh"
+
+# Scratchpad stuff
+bindsym Mod1+k exec ~/.i3/scratch-top.sh
+bindsym Mod1+v exec ~/.i3/scratch-volume.sh
+bindsym Mod1+m exec ~/.i3/scratch-music.sh
+bindsym Mod1+i exec ~/.i3/scratch-zeal.sh
+#bindsym Mod1+c exec ~/.i3/scratch-calendar.sh
+for_window [class="^URxvt$" instance="^(top|volume|music)$"] floating enable, resize set 1000px 700 px, move position center, move to scratchpad, scratchpad show
+for_window [class="^Zeal$"] floating enable, resize set 1000px 700 px, move position center, move to scratchpad, scratchpad show
+
+# Border size, separate from the title bar size
+for_window [class=".*"] border pixel 1
+
+# Reload config & notify user
+bindsym $mod+Shift+C exec "cat ~/.i3/configs/* > ~/.i3/config; i3-msg reload; notify-send 'i3 config reloaded'"
+
+# Kill the currently-focused window
+bindsym $mod+F12 exec "xdotool getwindowfocus windowkill"
+
+# Lock
+bindsym $mod+l exec xautolock -locknow
+
+# Hide everything
+bindsym $mod+Shift+l workspace $workspace1hide, workspace $workspace2hide, workspace $workspace3hide
+
+# Screenshot stuff
+bindsym $mod+Shift+s --release exec flameshot gui 
+bindsym Print --release exec /home/squigz/dotfiles/bash/scripts/screenshot.sh Active
+
+# Colors
+#   Border = Lines on bottom/top of title bar
+#   Background = Actual border
+#   Indicator = split v/h indicator
+#   Class                   Border  backgr  text    indicator child_border(?)
+client.focused              #3775c2 #3775c2 #ffffff #ffffff
+client.unfocused            #000000 #000000 #000000 #000000
+client.urgent               #000000 #000000 #000000 #000000
+client.focused_inactive     #384B52 #384B52 #000000 #000000
+client.background           #ffffff
+
+# Blank, adjustable title bars
+#   Adjust font size to increase/decrease title bar height
+#   Setting to 0 gives you about a 5 pixel high title bar, which seems to be the smallest it can be with current configuration
+#for_window [title=".*"] title_format "<span></span>"
+font pango:Fira 0
+
+# Startup script
+exec --no-startup-id /home/squigz/.i3/startup.sh 
+# Default(ish) keybinds
+bindsym $mod+1 workspace $workspace01
+bindsym $mod+2 workspace $workspace02
+bindsym $mod+3 workspace $workspace03
+bindsym --release $mod+4 workspace $workspace04
+bindsym $mod+5 workspace $workspace05
+bindsym $mod+6 workspace $workspace06
+bindsym $mod+7 workspace $workspace07
+bindsym $mod+8 workspace $workspace08
+bindsym $mod+9 workspace $workspace09
+bindsym $mod+0 workspace $workspace10
+bindsym $mod+ctrl+1 workspace $workspace11
+bindsym $mod+ctrl+2 workspace $workspace12
+bindsym $mod+ctrl+3 workspace $workspace13
+bindsym $mod+ctrl+4 workspace $workspace14
+bindsym $mod+ctrl+5 workspace $workspace15
+bindsym $mod+ctrl+6 workspace $workspace16
+bindsym $mod+ctrl+7 workspace $workspace17
+bindsym $mod+ctrl+8 workspace $workspace18
+bindsym $mod+ctrl+9 workspace $workspace19
+bindsym $mod+ctrl+0 workspace $workspace20
+
+#bindsym $mod+Menu+1 workspace $workspace31
+#bindsym $mod+Menu+2 workspace $workspace32
+#bindsym $mod+Menu+3 workspace $workspace33
+#bindsym $mod+Menu+4 workspace $workspace34
+#bindsym $mod+Menu+5 workspace $workspace35
+#bindsym $mod+Menu+6 workspace $workspace36
+#bindsym $mod+Menu+7 workspace $workspace37
+#bindsym $mod+Menu+8 workspace $workspace38
+#bindsym $mod+Menu+9 workspace $workspace39
+#bindsym $mod+Menu+10 workspace $workspace310
+
+bindsym $mod+Shift+exclam move workspace $workspace01
+bindsym $mod+Shift+at move workspace $workspace02
+bindsym $mod+Shift+numbersign move workspace $workspace03
+bindsym $mod+Shift+dollar move workspace $workspace04
+bindsym $mod+Shift+percent move workspace $workspace05
+bindsym $mod+Shift+asciicircum move workspace $workspace06
+bindsym $mod+Shift+ampersand move workspace $workspace07
+bindsym $mod+Shift+asterisk move workspace $workspace08
+
+bindsym $mod+Shift+Ctrl+exclam move workspace $workspace11
+bindsym $mod+Shift+Ctrl+at move workspace $workspace12
+bindsym $mod+Shift+Ctrl+numbersign move workspace $workspace13
+bindsym $mod+Shift+Ctrl+dollar move workspace $workspace14
+bindsym $mod+Shift+Ctrl+percent move workspace $workspace15
+bindsym $mod+Shift+Ctrl+asciicircum move workspace $workspace16
+bindsym $mod+Shift+Ctrl+ampersand move workspace $workspace17
+bindsym $mod+Shift+Ctrl+asterisk move workspace $workspace18
+
+bindsym mod1+control+w focus left
+bindsym mod1+control+e focus up
+bindsym mod1+control+d focus down
+bindsym mod1+control+f focus right
+bindsym $mod+Shift+Q kill
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# bindsym $mod+Shift+J move left 1
+# bindsym $mod+Shift+K move down 1
+# bindsym $mod+Shift+L move up 1
+# bindsym $mod+Shift+colon move right 1
+bindsym $mod+Shift+Left move left 1
+bindsym $mod+Shift+Down move down 1
+bindsym $mod+Shift+Up move up 1
+bindsym $mod+Shift+Right move right 1
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+Shift+R restart
+bindsym $mod+Shift+E exit
+bindsym $mod+shift+Escape mode nothing
+
+mode nothing {
+    bindsym Escape mode default
+}
+
+mode resize {
+    bindsym Return mode default
+    bindsym Escape mode default
+    bindsym j resize shrink left 10 px
+    bindsym Shift+J resize grow left 10 px
+    bindsym k resize shrink down 10 px
+    bindsym Shift+K resize grow down 10 px
+    bindsym l resize shrink up 10 px
+    bindsym Shift+L resize grow up 10 px
+    bindsym semicolon resize shrink right 10 px
+    bindsym Shift+colon resize grow right 10 px
+    bindsym Left resize shrink left 10 px
+    bindsym Shift+Left resize grow left 10 px
+    bindsym Down resize shrink down 10 px
+    bindsym Shift+Down resize grow down 10 px
+    bindsym Up resize shrink up 10 px
+    bindsym Shift+Up resize grow up 10 px
+    bindsym Right resize shrink right 10 px
+    bindsym Shift+Right resize grow right 10 px
+}
+
+bindsym $mod+r mode "resize"

@@ -1,0 +1,167 @@
+/******************************************************************************
+ * Selenized black variant ROFI Color theme
+ * Adapted from the original solarized theme:
+ * https://github.com/davatorium/rofi/tree/next/themes
+ ******************************************************************************/
+* {
+    bg-0:       #121212;
+    bg-1:       #1c1c1c;
+    bg-2:       #2d2d2d;
+    dim:        #636363;
+    fg-0:       #aaaaaa;
+    fg-1:       #d6d6d6;
+    red:        #e13136;
+    green:      #64a81d;
+    yellow:     #d1a416;
+    blue:       #2d76e9;
+    magenta:    #de54ab;
+    cyan:       #40bba8;
+    orange:     #da6930;
+    violet:     #9169dd;
+    br-red:     #fb4343;
+    br-green:   #77bd2d;
+    br-yellow:  #e9b928;
+    br-blue:    #4289ff;
+    br-magenta: #f767c0;
+    br-cyan:    #53d2bd;
+    br-orange:  #f37b3f;
+    br-violet:  #a67bf5;
+
+    highlight:                   none rgba ( 54, 138, 235, 100 % );
+    border-color:                @blue;
+    background-color:            rgba ( 0, 0, 0, 0 % );
+
+    // Theme vars
+    separatorcolor:              @blue;
+
+    foreground:                  @fg-0;
+    normal-foreground:           @foreground;
+    active-foreground:           rgba ( 79, 156, 254, 100 % );
+    urgent-foreground:           rgba ( 219, 179, 45, 100 % );
+
+    background:                  rgba ( 24, 24, 24, 100 % );
+    normal-background:           rgba ( 24, 24, 24, 100 % );
+    active-background:           rgba ( 24, 24, 24, 100 % );
+    urgent-background:           rgba ( 24, 24, 24, 100 % );
+
+    alternate-normal-foreground: @foreground;
+    alternate-active-foreground: @active-foreground;
+    alternate-urgent-foreground: @urgent-foreground;
+    
+    alternate-normal-background: rgba ( 24, 24, 24, 100 % );
+    alternate-active-background: rgba ( 24, 24, 24, 100 % );
+    alternate-urgent-background: rgba ( 24, 24, 24, 100 % );
+
+    selected-normal-foreground:  rgba ( 185, 185, 185, 100 % );
+    selected-active-foreground:  rgba ( 79, 156, 254, 100 % );
+    selected-urgent-foreground:  rgba ( 219, 179, 45, 100 % );
+
+    selected-normal-background:  rgba ( 59, 59, 59, 0 % );
+    selected-active-background:  rgba ( 59, 59, 59, 0 % );
+    selected-urgent-background:  rgba ( 59, 59, 59, 0 % );
+}
+window {
+    background-color: @background;
+    border:           1;
+    padding:          0 30px;
+}
+mainbox {
+    border:  0;
+    padding: 0;
+}
+message {
+    border:       1px dash 0px 0px;
+    border-color: @separatorcolor;
+    padding:      10px;
+}
+textbox {
+    text-color: @foreground;
+}
+listview {
+    border:       1px solid 0;
+    border-color: @separatorcolor;
+    spacing:      3px;
+    scrollbar:    false;
+    padding:      10px 0 10 0;
+    fixed-height: true;
+}
+element {
+    border:  0;
+    padding: 5px 0 5px 10px;
+}
+element normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+element selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border: 0 0 0 3;
+    border-color: @magenta;
+}
+element selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+element selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+mode-switcher {
+    border:       0px solid 0;
+    border-color: @separatorcolor;
+}
+button {
+    text-color: @selected-normal-foreground;
+}
+button selected {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+inputbar {
+    children:   [ entry, num-filtered-rows, textbox-num-sep, num-rows];
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    10px 10px 8px 10px;
+}
+prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+    placeholder-color: #eb6eb780;
+    placeholder: "Type to filter";
+}
+num-filtered-rows, num-rows, textbox-num-sep {
+    text-color: #eb6eb780;
+    expand: false;
+    str: "/";
+}
+textbox-prompt-colon {
+    margin:     0px 0.3000em 0.0000em 0.0000em ;
+    expand:     false;
+    str:        ":";
+    text-color: inherit;
+}

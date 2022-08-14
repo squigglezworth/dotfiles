@@ -1,0 +1,161 @@
+[default]
+main-color      = #9BB9BF
+i3-main-color   = #268bd2
+main-background = #000000
+urgent-color    = #ed4c7a
+overline-color  = #9BB9BF
+
+[common]
+monitor = DVI-I-1
+font-0 = "Ubuntu Mono:size=21;4"
+font-1 = "FontAwesome5ProLight;2"
+font-2 = "FontAwesome5FreeSolid;2"
+font-3 = "FontAwesome5BrandsRegular;2"
+background = ${default.main-background}
+foreground = ${default.main-color}
+
+[common/i3]
+type = internal/i3
+pin-workspaces  = true
+strip-wsnumbers = true
+enable-click    = true
+wrapping-scroll = false
+
+[common/date]
+type = custom/script
+interval = 30
+
+
+[bar/scroller]
+inherit = common
+bottom = true
+modules-center = i3-blank
+foreground = #000
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+height = 2
+
+[bar/default]
+inherit = common
+
+modules-left   = i3
+modules-center = date-main date-utc date-nl
+modules-right  = network
+
+tray-position = right
+tray-maxsize  = 20
+tray-padding  = 5
+tray-detached = false
+
+bottom = true
+height = 40
+
+scroll-up   = i3wm-wsprev
+scroll-down = i3wm-wsnext
+
+overline-size    = 0
+underline-size   = 3
+underline-color  = #ff0000
+
+border-top-size  = 0
+border-bottom-size = 0
+border-top-color = #000000
+
+
+[module/network]
+type      = internal/network
+interface = enp5s0
+interval  = 1
+format-connected    = <label-connected>
+format-disconnected = <label-disconnected>
+format-packetloss   = <label-connected>
+label-connected     = %downspeed:9%|
+
+[module/i3]
+inherit = common/i3
+
+format = "<label-state> <label-mode>"
+;format-offset = 250
+format-foreground = #fff
+
+ws-icon-default = " "
+ws-icon-0       = "2:1;"
+ws-icon-1       = "1:Chat;"
+ws-icon-2       = "2:Web;"
+ws-icon-3       = "3:Work;"
+ws-icon-4       = "4:Games;"
+
+; label-separator = ""
+label-separator-padding = 0
+label-separator-foreground = #fff
+
+label-mode      = "Mode: %{F#ff0000}%mode% %{F-}"
+label-mode-font = 1
+
+label-focused               = "  %icon%  "
+label-focused-background    = #000
+label-focused-foreground    = ${default.i3-main-color}
+label-focused-overline      = ${default.i3-main-color}
+label-focused-underline     = ${default.i3-main-color}
+
+label-unfocused             = "  %icon%  "
+label-unfocused-background  = #000
+label-unfocused-overline    = #757575
+; label-unfocused-underline = #757575
+
+label-visible               = "  %icon%  "
+label-visible-background    = #242424
+label-visible-overline      = #000
+label-visible-underline     = #000
+
+label-urgent                = "  %icon%  "
+label-urgent-background     = #000
+label-urgent-foreground     = #ff0000
+label-urgent-overline       = #ff0000
+label-urgent-underline      = #ff0000
+
+[module/i3-blank]
+inherit = common/i3
+format = ""
+
+
+[module/nop]
+type = custom/text
+content = ""
+
+[module/date-main]
+inherit = common/date
+interval = 1
+exec = "date +'%A %B %d, %_H:%M.%_S' | sed -e 's/  / /g' -e 's/\. \([[:digit:]]\+\)/\.\1 /g'"
+
+; format-prefix     = " – "
+; format-suffix     = " – "
+format-foreground = #fff
+
+[module/date-pt]
+inherit = common/date
+format  = PT: <label>
+format-prefix = " - "
+exec    = "TZ='America/Los_Angeles' date +'%R'"
+
+[module/date-utc]
+inherit = common/date
+format  = UTC: <label>
+format-prefix = " - "
+exec    = "TZ='' date +'%R'"
+
+[module/date-nl]
+inherit = common/date
+format  = CET: <label>
+format-prefix = " - "
+exec    = "TZ='Europe/Amsterdam' date +'%R'"
+
+[module/date-aet]
+inherit = common/date
+format  = AET: <label>
+exec    = "TZ='Australia/Melbourne' date +'%R'"
+
+[module/date-mt]
+inherit = common/date
+format  = MT: <label>
+exec    = "TZ='America/Denver' date +'%R'"

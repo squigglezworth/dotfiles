@@ -1,0 +1,32 @@
+Main:
+act(run,,rofi -show run)
+#act(screenshot,,rofi -show screenshot)
+dir(ut,Utilities)
+dir(g,Games)
+act(Firefox,,firefox)
+act(plex,,firefox --kiosk --new-window app.plex.tv/desktop -P plex)
+
+Gaps Inner:
+act(+,Increase inner,i3-msg gaps inner current plus 5,reload)
+act(-,Decrease inner,i3-msg gaps inner current minus 5,reload)
+act(0,Reset inner,i3-msg gaps inner current set 0,reload)
+
+Gaps Outer:
+act(+,Increase outer,i3-msg gaps outer current plus 5,reload)
+act(-,Decrease outer,i3-msg gaps outer current minus 5,reload)
+act(0,Reset outer,i3-msg gaps outer current set 0,reload)
+
+Games:
+dir(I,Binding of Isaac)
+
+Binding of Isaac:
+act(1,items,firefox --new-tab http://platinumgod.co.uk/afterbirth-plus)
+act(2,achievements, firefox --new-tab http://bindingofisaacrebirth.gamepedia.com/Achievements)
+act(3,challenges,firefox --new-tab http://bindingofisaacrebirth.gamepedia.com/Challengese)
+
+Utilities:
+act(qr,,rofi -show qr)
+act(sticky,,stickytoggle)
+dir(gi,Gaps Inner)
+dir(go,Gaps Outer)
+act(cdu,Media Disk Usage, xterm -geometry 120x20 -T floating -e "source ~/.bashrc; cdu -risdhD ~ | fzf --ansi --preview='cdu -risdhD {3..}' --reverse")

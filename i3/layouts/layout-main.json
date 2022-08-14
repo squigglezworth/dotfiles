@@ -1,0 +1,204 @@
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.70952380952381,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "floating": "auto_off",
+                    "layout": "tabbed",
+                    "percent": null,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "pixel",
+                            "current_border_width": 2,
+                            "floating": "user_off",
+                            "geometry": {
+                               "height": 653,
+                               "width": 1369,
+                               "x": 1367,
+                               "y": 29
+                            },
+                            "name": "Discord",
+                            "percent": 0.333333333333333,
+                            "swallows": [
+                               {
+                                "class": "^discord$",
+                                "instance": "^discord$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "pixel",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 580,
+                               "width": 964,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "bash",
+                            "percent": 0.333333333333333,
+                            "swallows": [
+                               {
+                                "class": "^URxvt$",
+                                "instance": "^irc$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "pixel",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 580,
+                               "width": 964,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "bash",
+                            "percent": 0.333333333333333,
+                            "swallows": [
+                               {
+                                "class": "^Slack$",
+                                "instance": "^slack$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "pixel",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 321,
+                               "width": 1416,
+                               "x": 1366,
+                               "y": 700
+                            },
+                            "name": "Mumble -- 1.3.0~git20190125.440b173+dfsg-2",
+                            "percent": 0.333333333333333,
+                            "swallows": [
+                               {
+                                "class": "^Mumble$",
+                                "instance": "^mumble$"
+                               }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "percent": 0.29047619047619,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "floating": "auto_off",
+                    "layout": "tabbed",
+                    "percent": 1,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "pixel",
+                            "floating": "auto_off",
+                            "layout": "splith",
+                            "percent": 1,
+                            "type": "con",
+                            "nodes": [
+                                {
+                                    "border": "pixel",
+                                    "floating": "auto_off",
+                                    "layout": "tabbed",
+                                    "percent": 0.704225352112676,
+                                    "type": "con",
+                                    "nodes": [
+                                        {
+                                            "border": "pixel",
+                                            "current_border_width": 2,
+                                            "floating": "auto_off",
+                                            "geometry": {
+                                               "height": 580,
+                                               "width": 964,
+                                               "x": 0,
+                                               "y": 0
+                                            },
+                                            "name": "bash",
+                                            "percent": 0.5,
+                                            "swallows": [
+                                               {
+                                                "class": "^URxvt$",
+                                                "instance": "^top$"
+                                               }
+                                            ],
+                                            "type": "con"
+                                        },
+                                        {
+                                            "border": "pixel",
+                                            "current_border_width": 2,
+                                            "floating": "auto_off",
+                                            "geometry": {
+                                               "height": 580,
+                                               "width": 964,
+                                               "x": 0,
+                                               "y": 0
+                                            },
+                                            "name": "bash",
+                                            "percent": 0.5,
+                                            "swallows": [
+                                               {
+                                                "class": "^URxvt$",
+                                                "instance": "^log$"
+                                               }
+                                            ],
+                                            "type": "con"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "border": "pixel",
+                                    "current_border_width": 2,
+                                    "floating": "auto_off",
+                                    "geometry": {
+                                       "height": 580,
+                                       "width": 964,
+                                       "x": 0,
+                                       "y": 0
+                                    },
+                                    "name": "bash",
+                                    "percent": 0.295774647887324,
+                                    "swallows": [
+                                       {
+                                        "class": "^URxvt$",
+                                        "instance": "^ping$"
+                                       }
+                                    ],
+                                    "type": "con"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,70 @@
+Xft.antialias : 1
+Xft.rgba      : none
+Xft.hintstyle : hintfull
+Xft.dpi       : 120
+
+
+URxvt.urgentOnBell:     true
+!! URxvt.bell-command:  cvlc --play-and-exit /home/squigz/dotfiles/beep2.mp3
+
+URxvt.scrollBar   : false
+URxvt.font        : xft:Hack:style=Regular:size=12,Font Awesome
+URxvt.letterSpace : -1
+
+URxvt.perl-ext         : default,matcher-2,keyboard-select,unicode,bell-command,-searchable-scrollback
+URxvt.perl-lib         : /home/squigz/dotfiles/urxvt/
+URxvt.url-launcher     : /usr/bin/firefox
+URxvt.matcher-2.button : 1
+
+URxvt.imLocale    : en_US.UTF-8
+URxvt.iso14755    : False
+URxvt.iso14755_52 : False
+
+URxvt.keysym.Control-Up    : \033[1;5A
+URxvt.keysym.Control-Down  : \033[1;5B
+URxvt.keysym.Control-Left  : \033[1;5D
+URxvt.keysym.Control-Right : \033[1;5C
+URxvt.keysym.C-0xFF09      : \033[27;5;9~' '
+URxvt.keysym.M-Delete      : perl:matcher:select
+
+
+Dclock.slope: 0
+Dclock.Background: "#0A0A0A"
+
+XTerm.termName        : xterm-256color
+XTerm.fullscreen      : never
+XTerm.charClass       : 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm.on3Clicks       : regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+XTerm.forceBoxChars   : true
+XTerm.faceName        : Hack:size=9
+XTerm.metaSendsEscape : true
+XTerm.eightBitInput   : false
+XTerm.bellIsUrgent    : true
+
+xdaliclock.cycle       : false
+xdaliclock.seconds     : false
+xdaliclock.background  : #0A0A0A
+xdaliclock.borderWidth : 0
+xdaliclock.font        : BUILTIN1
+xdaliclock.mode        : 24
+
+*.cursorColor : rgb:b9/b9/b9
+*.colorUL     : rgb:5b/9b/6d
+*.background  : rgb:18/18/18
+*.foreground  : rgb:b9/b9/b9
+*.color0      : rgb:25/25/25
+*.color1      : rgb:ed/4a/46
+*.color2      : rgb:70/b4/33
+*.color3      : rgb:db/b3/2d
+*.color4      : rgb:36/8a/eb
+*.color5      : rgb:eb/6e/b7
+*.color6      : rgb:3f/c5/b7
+*.color7      : rgb:77/77/77
+*.color8      : rgb:3b/3b/3b
+*.color9      : rgb:ff/5e/56
+*.color10     : rgb:83/c7/46
+*.color11     : rgb:ef/c5/41
+*.color12     : rgb:4f/9c/fe
+*.color13     : rgb:ff/81/ca
+*.color14     : rgb:56/d8/c9
+*.color15     : rgb:de/de/de

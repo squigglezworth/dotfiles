@@ -1,0 +1,8 @@
+configuration {
+    theme: ".config/rofi/themes/selenized-black.rasi";
+    lines: 10;
+    columns: 1;
+    font: "Hack 17";
+    sidebar-mode: false;
+    cycle: false;
+}

@@ -1,0 +1,26 @@
+* {
+    foreground: #ffffff;
+    background: #000000;
+    main-color: #268bd2;
+    red: #ed4c7a;
+    selected-foreground: @main-color; 
+    selected-background: @background;
+    highlight: bold #ed4c7a;
+}
+#window {
+    location: center;
+}
+#window mainbox inputbar prompt {
+    foreground: @main-color;
+}
+#window mainbox inputbar case-indicator {
+    foreground: @background;
+}
+#window mainbox inputbar box {
+    padding: 15px 0px 0px 0px;
+}
+#window box {
+    padding: 0px 0px 0px 10px;
+    border: 1px;
+    foreground: @main-color;
+}

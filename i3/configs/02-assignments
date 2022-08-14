@@ -1,0 +1,47 @@
+# Various window assignments
+assign [class="(^discord$|^Mumble$|^Slack$|^TeamSpeak 3$)"] $workspace01
+assign [class="^Mumble$"] $workspace01
+assign [class="^URxvt$" instance="(^irc$|^log$|^top$|^ping$)"] $workspace01
+assign [class="^firefox$"] $workspace02
+assign [class="^Pulseeffects$"] $workspace02
+assign [class="^Sublime_text$"] $workspace03
+assign [class="(^Steam$|^steam_app_.*$)"] $workspace04
+assign [class="^plexmediaplayer$"] $workspace11
+
+
+# Define 11 workspaces for each monitor
+workspace $workspace01 output $mon1
+workspace $workspace02 output $mon1
+workspace $workspace03 output $mon1
+workspace $workspace04 output $mon1
+workspace $workspace05 output $mon1
+workspace $workspace06 output $mon1
+workspace $workspace07 output $mon1
+workspace $workspace08 output $mon1
+workspace $workspace09 output $mon1
+workspace $workspace10 output $mon1
+workspace $workspace1hide output $mon1
+
+workspace $workspace11 output $mon2
+workspace $workspace12 output $mon2
+workspace $workspace13 output $mon2
+workspace $workspace14 output $mon2
+workspace $workspace15 output $mon2
+workspace $workspace16 output $mon2
+workspace $workspace17 output $mon2
+workspace $workspace18 output $mon2
+workspace $workspace19 output $mon2
+workspace $workspace20 output $mon2
+workspace $workspace2hide output $mon2
+
+workspace $workspace21 output $mon3
+workspace $workspace22 output $mon3
+workspace $workspace23 output $mon3
+workspace $workspace24 output $mon3
+workspace $workspace25 output $mon3
+workspace $workspace26 output $mon3
+workspace $workspace27 output $mon3
+workspace $workspace28 output $mon3
+workspace $workspace29 output $mon3
+workspace $workspace30 output $mon3
+workspace $workspace3hide output $mon3

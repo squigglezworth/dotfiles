@@ -395,7 +395,7 @@ d-i grub-installer/with_other_os boolean true
 # not be determined safely in general, so this needs to be specified:
 #d-i grub-installer/bootdev  string /dev/sda
 # To install to the primary device (assuming it is not a USB stick):
-#d-i grub-installer/bootdev  string default
+d-i grub-installer/bootdev  string default
 
 # Alternatively, if you want to install to a location other than the UEFI
 # parition/boot record, uncomment and edit these lines:
@@ -467,6 +467,6 @@ d-i finish-install/reboot_in_progress note
 # directly, or use the apt-install and in-target commands to easily install
 # packages and run commands in the target system.
 d-i preseed/late_command string apt-install git
-d-i preseed/late_command string in-target git clone github.com/squigglezworth/dotfiles /home/squigz/dotfiles
-d-i preseed/late_command string in-target bash /home/squigz/dotfiles/init.sh
+d-i preseed/late_command string in-target git clone github.com/squigglezworth/dotfiles /target/home/squigz/dotfiles
+d-i preseed/late_command string in-target bash /target/home/squigz/dotfiles/init.sh
 

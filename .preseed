@@ -468,6 +468,6 @@ d-i finish-install/reboot_in_progress note
 # packages and run commands in the target system.
 d-i preseed/late_command string \
 in-target apt-get -qq install git; \
-git clone -q github.com/squigglezworth/dotfiles /target/home/squigz/dotfiles; \
+in-target git clone -q github.com/squigglezworth/dotfiles /target/home/squigz/dotfiles; \
 in-target bash /target/home/squigz/dotfiles/init.sh;
 

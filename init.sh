@@ -2,7 +2,7 @@
 set -e
 read -p "This script will overwrite existing files. Are you sure you want to run it? (Yes)"
 if [[ ! $REPLY =~ ^Yes$ ]]; then
-    exit 1
+   exit 1
 fi
 
 # Import colors, exporting for future use

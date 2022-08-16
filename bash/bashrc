@@ -1,6 +1,4 @@
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
-fi
+[ -f ~/.preseed ] && (echo "First boot. Initializing..."; ~/dotfiles/init.sh && rm ~/.preseed)
 
 [ -f ~/dotfiles/bash/colors ] && source ~/dotfiles/bash/colors
 [ -f /etc/bash_completion ] && source /etc/bash_completion
@@ -10,14 +8,12 @@ export TZ="America/Toronto"
 export BROWSER="firefox"
 export EDITOR="subl"
 
-PATH="$HOME/bin/:$PATH"
 PATH="$HOME/dotfiles/bash/scripts/:$PATH"
+PATH="$HOME/bin/:$PATH"
 PATH="$HOME/.local/bin/:$PATH"
 PATH="$HOME/go/bin/:$PATH"
 export PATH
 
-export PASSWORD_STORE_CLIP_TIME=125
-export FZF_DEFAULT_OPTS="--inline-info --header=──────────────────────────────── --color=16,info:0,header:236,prompt:236,hl:9,fg+:9 --reverse --height=10 --history-size=100000"
 # use qt5ct to configure QT themes in i3wm
 export QT_QPA_PLATFORMTHEME=qt5ct
 export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
@@ -26,18 +22,12 @@ export HISTSIZE=-1
 export HISTFILESIZE=-1
 export HISTCONTROL="ignoredups"
 export LESSHISTFILE="/dev/null"
+export PASSWORD_STORE_CLIP_TIME=125
+export FZF_DEFAULT_OPTS="--inline-info --header=──────────────────────────────── --color=16,info:0,header:236,prompt:236,hl:9,fg+:9 --reverse --height=10 --history-size=100000"
 
 alias arandr="arandr && ~/.fehbg"
-
 alias ls="ls --group-directories-first --file-type -h --color=always"
 alias cls="clear"
-
-# Prompt
-set_ps1() {
-    PS1="\[$BGreen\]\u@\H \[$BPurple\]\w\$(__git_ps1) > \[$Color_Off\]"
-}
-PROMPT_COMMAND=set_ps1
-GIT_PS1_SHOWDIRTYSTATE=1; GIT_PS1_SHOWUNTRACKEDFILES=1
 
 tmux() {
     if [[ "$1" = "ls" ]]; then
@@ -53,12 +43,9 @@ tmux() {
     printf "%'.f\n" $(echo $1 | bc)
 }
 
-
-# if [ -z "$SSH_AUTH_SOCK" ] ; then
-#   eval `ssh-agent -s`
-# fi
-
-# Probably don't need this anymore...
-# export QT_STYLE_OVERRIDE=gtk2
-# [ -f /etc/bash_completion.d/git-prompt ] && source /etc/bash_completion.d/git-prompt
-# [ -f /usr/share/bash-completion/completions/pass ] && source /usr/share/bash-completion/completions/pass
+# Prompt
+set_ps1() {
+    PS1="\[$BGreen\]\u@\H \[$BPurple\]\w\$(__git_ps1) > \[$Color_Off\]"
+}
+PROMPT_COMMAND=set_ps1
+GIT_PS1_SHOWDIRTYSTATE=1; GIT_PS1_SHOWUNTRACKEDFILES=1

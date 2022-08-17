@@ -2,9 +2,9 @@
 # See README for more details
 [ -f ~/.preseed ] && (~/dotfiles/.setup/init.sh yes && rm ~/.preseed)
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/dotfiles/bash/colors ] && source ~/dotfiles/bash/colors
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export TZ="America/Toronto"
 export BROWSER="firefox"
@@ -31,6 +31,7 @@ alias arandr="arandr && ~/.fehbg"
 alias ls="ls --group-directories-first --file-type -h --color=always"
 alias cls="clear"
 
+# Override `tmux ls` and use fzf to provide a menu to select a session
 tmux() {
     if [[ "$1" = "ls" ]]; then
         session=$(tmux list-sessions -F "#{session_name}" | fzf --exit-0)\
@@ -40,10 +41,10 @@ tmux() {
     fi
 }
 
-# = 1+1 (note the space)
-= () {
-    printf "%'.f\n" $(echo $1 | bc)
-}
+# Calculator
+# = 1+1
+# calc 1+1
+= () { printf "%'.f\n" $(echo $1 | bc); }; alias calc==
 
 # Prompt
 set_ps1() {

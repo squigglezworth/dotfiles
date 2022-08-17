@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/squigz/.mpdscribble'
+let g:netrw_dirhist_2='/home/squigz/mining-reminders'
+let g:netrw_dirhist_1='/etc/bash_completion.d'

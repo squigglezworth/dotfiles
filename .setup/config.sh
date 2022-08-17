@@ -39,7 +39,12 @@ echoDone
 
 echo -e "\t Configuring desktop environment:"
 echo -ne "\t\t Copying fonts ... "
-rm -rf $HOME/.fonts
+rm -f $HOME/.bashrc $HOME/.bash_profile
+ln -fs $PWD/bash/bashrc $HOME/.bashrc
+ln -fs $PWD/bash/bash_profile $HOME/.bash_profile
+echoDone
+echo -ne "\t\t Copying fonts ... "
+rm -rf $HOME/.fonts/
 ln -fs $PWD/fonts/ $HOME/.fonts; echoDone
 echo -ne "\t\t Configuring X ... "
 rm -f $HOME/.Xresources $HOME/.xinitrc
@@ -48,23 +53,25 @@ echo -ne "\t\t Configuring bash ... "
 rm -f $HOME/.bashrc
 ln -fs $PWD/bash/bashrc $HOME/.bashrc; echoDone
 echo -ne "\t\t Configuring i3 ... "
-rm -rf $HOME/.i3
+rm -rf $HOME/.i3/
 ln -fs $PWD/i3/ $HOME/.i3; echoDone
 echo -ne "\t\t Configuring polybar ... "
-rm -rf $HOME/.config/polybar
+rm -rf $HOME/.config/polybar/
 ln -fs $PWD/polybar/ $HOME/.config/polybar; echoDone
 echo -ne "\t\t Configuring wallpaper ... "
 rm -f $HOME/.fehbg
 ln -fs $PWD/feh $HOME/.fehbg; echoDone
 echo -ne "\t\t Configuring dunst ... "
-rm -rf $HOME/.config/dunst
+rm -rf $HOME/.config/dunst/
 ln -fs $PWD/dunst/ $HOME/.config/dunst; echoDone
 # echo -ne "\t\t Configuring Firefox ... "
-# rm -rf $HOME/.mozilla
+# rm -rf $HOME/.mozilla/
 # mkdir -p $HOME/.mozilla; ln -fs $PWD/firefox/firefox/ $HOME/.mozilla/firefox; echoDone
 echo -ne "\t\t Configuring vim ... "
-rm -rf $HOME/.vimrc
-ln -fs $PWD/vim/vimrc $HOME/.vimrc; echoDone
+rm -rf $HOME/.vim $HOME/.vimrc
+ln -fs $PWD/vim/vimrc $HOME/.vimrc
+ln -fs $PWD/vim/vim $HOME/.vim
+echoDone
 # echo -ne "\t\t Configuring sublime ... "
 # rm -rf $HOME/.config/sublime-text
 # ln -fs $PWD/sublime-text/ $HOME/.config/sublime-text; echoDone

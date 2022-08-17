@@ -30,7 +30,7 @@ echoDone() { echo -e "${BGreen}Done!${Color_Off}" ; }
 set +a
 
 # Move to `dotfiles`
-cd $(dirname -- $0)
+cd $(dirname -- $0)/..
 
 echo -e $(randColor "Let's do it!")
 echo -ne "\nInitial apt update ... "

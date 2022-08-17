@@ -7,6 +7,7 @@
 # This script is destructive and you probably shouldn't run it
 
 set -e
+echo ".dotfiles init"
 if [[ "$@" != "yes" ]]; then
    read -p "This script will overwrite existing files. Are you sure you want to run it? (Yes)"
    if [[ ! $REPLY =~ ^Yes$ ]]; then

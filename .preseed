@@ -470,4 +470,5 @@ d-i preseed/late_command string \
 apt-install git dbus-user-session ; \
 in-target su - squigz -c "git clone -q https://github.com/squigglezworth/dotfiles /home/squigz/dotfiles" ; \
 in-target su - squigz -c "cp -af /home/squigz/dotfiles/bash/bashrc /home/squigz/.bashrc" ; \
+cp -a /target/home/squigz/dotfiles/systemd/autologin.conf /target/etc/systemd/system/getty@tty1.service.d/ ; \
 in-target su - squigz -c "touch /home/squigz/.preseed"

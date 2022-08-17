@@ -21,9 +21,6 @@ sudo mkdir -p /mnt/disk-{1,2,3} /mnt/usb{,2} /mnt/misc
 sudo chown -R squigz:squigz /mnt/
 for i in disk-{1,2,3} usb; do mount /mnt/$i; done
 echoDone
-echo -ne "\t\t Configuring autologin ... "
-sudo cp -a $PWD/systemd/autologin.conf /etc/systemd/system/getty@tty1.service.d/
-echoDone
 echo -ne "\t\t Configuring tops (top, atop, htop) ... "
 rm -rf $HOME/.config/procps $HOME/.config/htop $HOME/.atoprc
 mkdir -p $HOME/.config/procps/ $HOME/.config/htop/

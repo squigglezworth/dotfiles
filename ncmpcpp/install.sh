@@ -7,7 +7,7 @@ if ! which ncmpcpp >/dev/null; then
     cd /tmp/ncmpcpp/
     ./autogen.sh
     ./configure
-    make
+    make -j
     sudo make install
     sudo rm -rf /tmp/ncmpcpp
 else

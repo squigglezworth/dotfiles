@@ -1,4 +1,4 @@
-[ -f ~/.preseed ] && (echo "First boot. Initializing..."; ~/dotfiles/init.sh && rm ~/.preseed)
+[ -f ~/.preseed ] && (echo "First boot. Initializing..."; ~/dotfiles/init.sh yes && rm ~/.preseed)
 
 [ -f ~/dotfiles/bash/colors ] && source ~/dotfiles/bash/colors
 [ -f /etc/bash_completion ] && source /etc/bash_completion

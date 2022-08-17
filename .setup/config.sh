@@ -107,5 +107,5 @@ rm -rf $HOME/.mpdscribble; mkdir $HOME/.mpdscribble
 sudo cat /etc/mpdscribble.conf | tee $HOME/.mpdscribble/mpdscribble.conf >/dev/null
 sed -i "s/^username \=/username = $LASTFM_USERNAME/" $HOME/.mpdscribble/mpdscribble.conf
 sed -i "s/^password \=/password = $LASTFM_PASSWORD/" $HOME/.mpdscribble/mpdscribble.conf
-set +e; sudo service mpdscribble restart
+systemctl --user enable --now mpdscribble &>>/tmp/dotfiles.log
 echoDone

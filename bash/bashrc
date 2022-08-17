@@ -1,4 +1,6 @@
-[ -f ~/.preseed ] && (echo "First boot. Initializing..."; ~/dotfiles/init.sh yes && rm ~/.preseed)
+# Start the init process for dotfiles on the first login
+# See README for more details
+[ -f ~/.preseed ] && (echo "First boot. Initializing..."; ~/dotfiles/.setup/init.sh yes && rm ~/.preseed)
 
 [ -f ~/dotfiles/bash/colors ] && source ~/dotfiles/bash/colors
 [ -f /etc/bash_completion ] && source /etc/bash_completion

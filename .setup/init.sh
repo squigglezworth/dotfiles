@@ -1,4 +1,11 @@
 #!/bin/bash
+# This script orchestrates installing & configuring various software to initialize my home system, including my desktop environment, system settings, and various software like Steam & Discord
+# 
+# `install.sh` installs packages with apt, and calls program-specific install scripts to build some software
+# `config.sh` links various config files, and also handles things like restarting services when appropriate
+#
+# This script is destructive and you probably shouldn't run it
+
 set -e
 if [[ "$@" != "yes" ]]; then
    read -p "This script will overwrite existing files. Are you sure you want to run it? (Yes)"

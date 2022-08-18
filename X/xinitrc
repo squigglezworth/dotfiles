@@ -1,6 +1,5 @@
-#~/.screenlayout/screens.sh
 ~/.fehbg
 cat ~/.i3/configs/* > ~/.i3/config
 
 export QT_QPA_PLATFORMTHEME=qt5ct
-exec dbus-launch --exit-with-session i3
+exec dbus-run-session i3

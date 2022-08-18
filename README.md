@@ -1,7 +1,7 @@
 <div align=center>
   <img src='https://user-images.githubusercontent.com/20311086/185320227-c2793470-0610-491a-9407-cc734ab33f23.svg' />
   <br>
-<span style="color:#ED4A46;">p</span><span style="color:#70B433;">r</span><span style="color:#DBB32D;">e</span><span style="color:#368AEB;">t</span><span style="color:#EB6EB7;">t</span><span style="color:#3FC5B7;">y&nbsp;</span></span><span><span style="color:#E67F43;">c</span><span style="color:#A580E2;">o</span><span style="color:#FF87B2;">n</span><span style="color:#F4E06D;">f</span><span style="color:#FF87B2;">i</span><span style="color:#A580E2;">g&nbsp;</span></span><span><span style="color:#E67F43;">f</span><span style="color:#3FC5B7;">i</span><span style="color:#EB6EB7;">l</span><span style="color:#368AEB;">e</span><span tyle="color:#DBB32D;">s</span>
+<span><span><span style="color:#ED4A46;">p</span><span style="color:#70B433;">r</span><span style="color:#DBB32D;">e</span><span style="color:#368AEB;">t</span><span style="color:#EB6EB7;">t</span><span style="color:#3FC5B7;">y&nbsp;</span></span><span><span style="color:#E67F43;">c</span><span style="color:#A580E2;">o</span><span style="color:#FF87B2;">n</span><span style="color:#F4E06D;">f</span><span style="color:#FF87B2;">i</span><span style="color:#A580E2;">g&nbsp;</span></span><span><span style="color:#E67F43;">f</span><span style="color:#3FC5B7;">i</span><span style="color:#EB6EB7;">l</span><span style="color:#368AEB;">e</span><span style="color:#DBB32D;">s</span></span></span>
   <hr>
 
 <sup><i>Original: <a href="https://github.com/squigglezworth/dotfiles"><code>squigglezworth/dotfiles</code></a> — Mirror for easier fetching: <a href='https://github.com/squigzy/squigzy.github.io/'><code>squigzy/squigzy.github.io</code></a></i></sup>

@@ -27,7 +27,7 @@ fi
 ##  ██████  ███████ ███████ ██   ██    ██     ██████  ██      
 
 echo -e "\t Installing desktop environment:"
-LIST="arandr dunst feh lxappearance nemo pass pulseeffects pulsemixer qt5ct rofi xinit"
+LIST="arandr dunst feh lxappearance nemo pass pulseeffects pulsemixer qt5ct rofi rxvt-unicode-256color xinit"
 echo -ne "\t\t Installing basic utils ($(colorList $LIST)) ... "
 sudo apt-get -qq install $LIST &>>/tmp/dotfiles.log; echoDone
 echo -ne "\t\t Installing $(randColor "i3-gaps") ... "

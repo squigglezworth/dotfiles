@@ -1,5 +1,5 @@
 <div align=center>
-  <img src='https://user-images.githubusercontent.com/20311086/184478726-37ad298d-eea1-4340-8175-4462f62e6a68.png' />
+  <img src='https://user-images.githubusercontent.com/20311086/185320227-c2793470-0610-491a-9407-cc734ab33f23.svg' />
   <br>
   pretty config files
   <hr>

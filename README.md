@@ -10,7 +10,7 @@
 ### To install these on a new system... [^1]
 
 - <a href="https://wiki.debian.org/DebianInstaller/Preseed">Preseed</a> a Debian installation with <a href='.preseed'>`.preseed`</a> (served at <a href="https://squigzy.github.io/.preseed">`squigzy.github.io/.preseed`</a>)<br>
-- The preseed fetches this repo, enables <a href="systemd/autologin.conf">autologin</a>, installs <a href='bash/bashrc'>`.bashrc`</a>, and creates a blank `~/.preseed` file<br>
-- On the first login, <a href='bash/bashrc'>`.bashrc`</a> will see `~/.preseed` and call <a href='.setup/init.sh'>`init.sh`</a>, which will orchestrate the installation & configuration of everything else<br>
+- The preseed fetches this repo, enables <a href="systemd/autologin.conf">autologin</a>, installs <a href='bash/bashrc'>`~/.bashrc`</a>, and creates a blank `~/.init` file<br>
+- On the first login, <a href='bash/bashrc'>`~/.bashrc`</a> will see `~/.init` and call <a href='.setup/init.sh'>`.setup/init.sh`</a>, which will orchestrate the installation & configuration of everything else<br>
 
 [^1]:...which you really shouldn't do unless you know what you're doing.

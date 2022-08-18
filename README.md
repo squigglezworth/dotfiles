@@ -3,8 +3,9 @@
   <br>
   pretty config files
   <hr>
+
+<sup><i>Original: <a href="https://github.com/squigglezworth/dotfiles">`squigglezworth/dotfiles`</a> — Mirror for easier fetching: <a href='https://github.com/squigzy/squigzy.github.io/'>`squigzy/squigzy.github.io`</a></i></sup>
 </div>
-Original: <a href="https://github.com/squigglezworth/dotfiles">`squigglezworth/dotfiles`</a> — Mirror for easier fetching: <a href='https://github.com/squigzy/squigzy.github.io/'>`squigzy/squigzy.github.io`</a>
 <h3>To install these on a new system...</h3>
 
 - <a href="https://wiki.debian.org/DebianInstaller/Preseed">Preseed</a> a Debian installation with <a href='https://squigzy.github.io/.preseed'>`https://squigzy.github.io/.preseed`</a><br>

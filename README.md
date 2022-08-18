@@ -4,11 +4,8 @@
   pretty config files
   <hr>
 
-<p>
-
 Original: <a href="https://github.com/squigglezworth/dotfiles">`squigglezworth/dotfiles`</a> — Mirror for easier fetching: <a href='https://github.com/squigzy/squigzy.github.io/'>`squigzy/squigzy.github.io`</a>
 
-</p>
 </div>
 <h3>To install these on a new system...</h3>
 

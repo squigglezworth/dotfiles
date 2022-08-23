@@ -1,6 +1,6 @@
 # Start the init process for dotfiles on the first login
 # See README for more details
-[ -f ~/.init ] && (~/dotfiles/.setup/init.sh yes && rm ~/.init)
+[ -f ~/.init ] && ~/dotfiles/.setup/init.sh auto
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/dotfiles/bash/colors ] && source ~/dotfiles/bash/colors

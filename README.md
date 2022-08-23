@@ -7,10 +7,19 @@
 <sup><i>Original: <a href="https://github.com/squigglezworth/dotfiles"><code>squigglezworth/dotfiles</code></a> — Mirror for easier fetching: <a href='https://github.com/squigzy/squigzy.github.io/'><code>squigzy/squigzy.github.io</code></a></i></sup>
 </div>
 
-### To install these on a new system... [^1]
-
-- <a href="https://wiki.debian.org/DebianInstaller/Preseed">Preseed</a> a Debian installation with <a href='.preseed'>`.preseed`</a> (served at <a href="https://squigzy.github.io/.preseed">`squigzy.github.io/.preseed`</a>)<br>
-- The preseed fetches this repo, enables <a href="systemd/autologin.conf">autologin</a>, installs <a href='bash/bashrc'>`~/.bashrc`</a>, and creates a blank `~/.init` file<br>
-- On the first login, <a href='bash/bashrc'>`~/.bashrc`</a> will see `~/.init` and call <a href='.setup/init.sh'>`.setup/init.sh`</a>, which will orchestrate the installation & configuration of everything else<br>
+The major steps to installing these are...[^1]
+- Preseeding
+  - <a href="https://wiki.debian.org/DebianInstaller/Preseed">Preseed</a> a Debian installation with <a href='.preseed'>`.preseed`</a> (served at <a href="https://squigzy.github.io/.preseed">`squigzy.github.io/.preseed`</a>)<br>
+  - The preseed fetches this repo, enables <a href="systemd/autologin.conf">autologin</a>, installs <a href='bash/bashrc'>`~/.bashrc`</a>, and creates a blank `~/.init` file<br>
+  - After OS installation, on the first login, <a href='bash/bashrc'>`~/.bashrc`</a> will see `~/.init` and call <a href='.setup/init.sh'>`.setup/init.sh`</a>, which will orchestrate installation & configuration<br>
+- Installing
+  - The first script <a href='.setup/init.sh'>`init.sh`</a> calls is <a href='.setup/install.sh'>`.setup/install.sh`</a>, which installs various packages with `apt`, and runs some software-specific install scripts, such as for <a href='i3/install.sh'>i3-gaps</a>
+- Configuring
+  - After installation, <a href='.setup/init.sh'>`init.sh`</a> calls <a href='.setup/config.sh'>`.setup/config.sh`</a>, which symlinks various config files to their appropriate locations, and handles things like creating/removing directories or restarting services when appropriate
+- Final Steps & Cleanup
+  - Temporary files such as for building are stored in `/tmp` and should be cleaned up by the OS
+  - Before exiting, <a href='.setup/init.sh'>`init.sh`</a> will prompt the user to run a further backup script to restore sensitive files (i.e., SSH keys)
+  - Once the above scripts have finished, `~/.init` is removed by <a href='bash/bashrc'>`~/.bashrc`</a>
+  - Finally, the script will prompt the user to reboot
 
 [^1]:...which you really shouldn't do unless you know what you're doing.

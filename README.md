@@ -1,5 +1,5 @@
 <div align=center>
-  <img src='https://user-images.githubusercontent.com/20311086/185320227-c2793470-0610-491a-9407-cc734ab33f23.svg' />
+  <img width=500 src='https://user-images.githubusercontent.com/20311086/186057854-255040f7-320c-43b9-b617-0871bfbc75a5.png' />
   <br>
 <span><span><span style="color:#ED4A46;">p</span><span style="color:#70B433;">r</span><span style="color:#DBB32D;">e</span><span style="color:#368AEB;">t</span><span style="color:#EB6EB7;">t</span><span style="color:#3FC5B7;">y&nbsp;</span></span><span><span style="color:#E67F43;">c</span><span style="color:#A580E2;">o</span><span style="color:#FF87B2;">n</span><span style="color:#F4E06D;">f</span><span style="color:#FF87B2;">i</span><span style="color:#A580E2;">g&nbsp;</span></span><span><span style="color:#E67F43;">f</span><span style="color:#3FC5B7;">i</span><span style="color:#EB6EB7;">l</span><span style="color:#368AEB;">e</span><span style="color:#DBB32D;">s</span></span></span>
   <hr>

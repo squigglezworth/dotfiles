@@ -102,6 +102,10 @@ echo -ne "\t\t Configuring conky ... "
 rm  -rf $HOME/.config/conky
 ln -fs $PWD/conky/ $HOME/.config/conky; echoDone
 
+echo -ne "\t\t Configuring git ... "
+git config --global user.name "squigglezworth"
+git config --global core.editor "subl -w"; echoDone
+
 
 ##  ███    ███ ██    ██ ███████ ██  ██████ 
 ##  ████  ████ ██    ██ ██      ██ ██      

@@ -4,11 +4,11 @@ set $mon1 DVI-I-1
 set $mon2 HDMI-0
 set $mon3 DVI-D-0
 
-set $workspace01 "1:Chat"
-set $workspace02 "2:Web"
-set $workspace03 "3:Work"
-set $workspace04 "4:Games"
-set $workspace05 "5:P2P"
+set $workspace01 "1"
+set $workspace02 "2"
+set $workspace03 "3"
+set $workspace04 "4"
+set $workspace05 "5"
 set $workspace06 "6"
 set $workspace07 "7"
 set $workspace08 "8"

@@ -15,12 +15,15 @@ focus_follows_mouse yes
 focus_on_window_activation none
 
 # Gaps
-workspace $workspace01 gaps top 80
+workspace $workspace01 gaps outer 90
 workspace $workspace01 gaps bottom 150
-workspace $workspace01 gaps horizontal 90
-
+workspace $workspace02 gaps outer 50
+workspace $workspace02 gaps bottom 90
 workspace $workspace03 gaps horizontal 100
 workspace $workspace03 gaps vertical 50
+workspace $workspace03 gaps bottom 90
+workspace $workspace04 gaps outer 50
+workspace $workspace04 gaps bottom 90
 
 
 # Float some windows
@@ -31,8 +34,6 @@ for_window [class="^URxvt$" instance="floating"] floating enable, move position 
 for_window [instance="(arandr|Customize Look and Feel|gtk-recordmydesktop|Install user style)"] floating enable
 
 # Steam
-for_window[class="Steam"] floating enable
-
 for_window [class="^Steam$" instance="(^Friends$|Steam - News.*|.* - Chat|^Settings$|.* - event started|.* CD key|^Steam - Self Updater$|^Screenshot Uploader$|^Steam Guard - Computer Authorization Required$|^Steam Keyboard$|Library Folders|library folder)"] floating enable
 
 # Tile some windows
@@ -46,11 +47,11 @@ bindsym Mod1+d exec "rofi -show blezz"
 bindsym Mod1+p exec "rofi -sort -show pass:/home/squigz/.config/rofi/passmenu.sh"
 
 # Scratchpad stuff
-bindsym Mod1+k exec ~/.i3/scratch-top.sh
-bindsym Mod1+v exec ~/.i3/scratch-volume.sh
-bindsym Mod1+m exec ~/.i3/scratch-music.sh
-bindsym Mod1+i exec ~/.i3/scratch-zeal.sh
-#bindsym Mod1+c exec ~/.i3/scratch-calendar.sh
+bindsym Mod1+k exec ~/.i3/scratch-scripts/scratch-top.sh
+bindsym Mod1+v exec ~/.i3/scratch-scripts/scratch-volume.sh
+bindsym Mod1+m exec ~/.i3/scratch-scripts/scratch-music.sh
+bindsym Mod1+i exec ~/.i3/scratch-scripts/scratch-zeal.sh
+#bindsym Mod1+c exec ~/.i3/scratch-scripts/scratch-calendar.sh
 for_window [class="^URxvt$" instance="^(top|volume|music)$"] floating enable, resize set 1000px 700 px, move position center, move to scratchpad, scratchpad show
 for_window [class="^Zeal$"] floating enable, resize set 1000px 700 px, move position center, move to scratchpad, scratchpad show
 

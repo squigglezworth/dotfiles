@@ -1,6 +1,7 @@
 #!/bin/bash
+set -e
 
-if ! which fzf; then
+if [ ! fzf ]; then
     git clone -q --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
     $HOME/.fzf/install --all; echoDone
 else

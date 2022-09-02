@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-if ! which discord; then
+if [ ! discord ]; then
     wget --quiet "https://discord.com/api/download?platform=linux&format=deb" -O /tmp/discord.deb
     dpkg-deb -x /tmp/discord.deb /tmp/discord-tmp
     dpkg-deb --control /tmp/discord.deb /tmp/discord-tmp/DEBIAN

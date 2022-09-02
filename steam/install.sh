@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! which steam; then
+if [ ! steam ]; then
     echo steam steam/question select "I AGREE" | sudo debconf-set-selections
     echo steam steam/license note '' | sudo debconf-set-selections
     sudo dpkg --add-architecture i386

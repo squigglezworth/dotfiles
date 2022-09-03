@@ -99,8 +99,11 @@ rm -rf $HOME/.config/PulseEffects
 ln -fs $PWD/PulseEffects/ $HOME/.config/PulseEffects; echoDone
 
 echo -ne "\t\t Configuring conky ... "
-rm  -rf $HOME/.config/conky
-ln -fs $PWD/conky/ $HOME/.config/conky; echoDone
+rm  -rf $HOME/.conky
+ln -fs $PWD/conky/ $HOME/.conky; echoDone
+
+echo -ne "\t\t Configuring picom ... "
+ln -fs $PWD/picom/picom.conf $HOME/.config/picom.conf; echoDone
 
 echo -ne "\t\t Configuring git ... "
 git config --global user.name "squigglezworth"

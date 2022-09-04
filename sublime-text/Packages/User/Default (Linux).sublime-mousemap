@@ -1,0 +1,4 @@
+[
+    { "button": "button8", "command": "noop" },
+    { "button": "button9", "command": "noop" },   
+]

@@ -1,0 +1,38 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"AlignTab",
+		"Column Sort",
+		"Extract Sublime Package",
+		"GitGutter",
+		"i3 wm",
+		"INI",
+		"JSONLint",
+		"LSP",
+		"Markdown Extended",
+		"Multi Select Alphabetizer",
+		"Package Control",
+		"PackageDev",
+		"PackageResourceViewer",
+		"PHP-Twig",
+		"Pretty JSON",
+		"PyDOC",
+		"RemoveDuplicateLines",
+		"Sort Lines (Numerically)",
+		"Sort Lines By Selection",
+		"SortList",
+		"SQF Language",
+		"Theme - Spacegray",
+		"Trimmer",
+		"xml2json",
+	],
+	"repositories":
+	[
+		"https://github.com/dcasella/i3wm-syntax",
+	],
+}

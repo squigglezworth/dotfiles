@@ -1,0 +1,14 @@
+[
+    { "keys": ["ctrl+tab"], "command": "next_view" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+    { "keys": ["ctrl+alt+m"], "command": "toggle_menu" },
+    { "keys": ["f2"], "command": "lsp_symbol_rename" },
+    { "keys": ["mouse4"], "command": "noop" },
+    { "keys": ["mouse3"], "command": "noop" },
+    { "keys": ["shift+f11"], "command": "noop" },
+    { "keys": ["alt+shift+a"], "command": "align_tab","args" : {"user_input" : "=/f"} },
+    { "keys": ["ctrl+shift+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    { "keys": ["ctrl+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+    // { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+    // { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
+]

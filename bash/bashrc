@@ -28,8 +28,19 @@ export PASSWORD_STORE_CLIP_TIME=125
 export FZF_DEFAULT_OPTS="--inline-info --header=──────────────────────────────── --color=16,info:0,header:236,prompt:236,hl:9,fg+:9 --reverse --height=10 --history-size=100000"
 
 alias arandr="arandr && ~/.fehbg"
-alias ls="ls --group-directories-first --file-type -h --color=always"
 alias cls="clear"
+alias df="df -x tmpfs -x devtmpfs -x vfat -h"
+alias gs="git status"
+alias ls="ls --group-directories-first --file-type -h --color=always"
+
+# Override `git log`
+git() {
+    if [[ "$1" = "log" ]]; then
+        command git log --pretty=format:"%C(yellow)%h %Cgreen%ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=relative "${@:2}"
+    else
+        command git "$@"
+    fi
+}
 
 # Override `tmux ls` and use fzf to provide a menu to select a session
 tmux() {

@@ -1,2 +1,4 @@
 discogs_token.json
 acoustid.yaml
+library.db
+state.pickle

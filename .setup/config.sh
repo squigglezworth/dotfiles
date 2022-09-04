@@ -107,8 +107,7 @@ echo -ne "\t\t Configuring picom ... "
 ln -fs $PWD/picom/picom.conf $HOME/.config/picom.conf; echoDone
 
 echo -ne "\t\t Configuring git ... "
-git config --global user.name "squigglezworth"
-git config --global core.editor "subl -w"; echoDone
+ln -fs $PWD/.gitconfig $HOME/.gitconfig
 
 
 ##  ███    ███ ██    ██ ███████ ██  ██████ 

@@ -95,6 +95,10 @@ echo -ne "\t\t Configuring ranger ... "
 rm -rf $HOME/.config/ranger
 ln -fs $PWD/ranger $HOME/.config/blezz; echoDone
 
+echo -ne "\t\t Configuring parcellite ... "
+rm -rf $HOME/.config/parcellite
+ln -fs $PWD/parcellite $HOME/.config/; echoDone
+
 echo -ne "\t\t Configuring pulsemixer ... "
 rm -rf $HOME/.config/pulsemixer.cfg
 ln -fs $PWD/pulsemixer/pulsemixer.cfg $HOME/.config/pulsemixer.cfg; echoDone

@@ -45,8 +45,12 @@ ln -fs $PWD/bash/bash_profile $HOME/.bash_profile
 echoDone
 
 echo -ne "\t\t Copying fonts ... "
-rm -rf $HOME/.fonts/
-ln -fs $PWD/fonts/ $HOME/.fonts; echoDone
+mkdir -p $HOME/.fonts
+tar -xaf $PWD/fonts/fonts.tar.gz -C $HOME/.fonts/
+
+echo -ne "\t\t Copying icons ... "
+mkdir -p $HOME/.icons
+tar -xaf $PWD/icons/icons.tar.gz -C $HOME/.icons/
 
 echo -ne "\t\t Configuring X ... "
 rm -f $HOME/.Xresources $HOME/.xinitrc

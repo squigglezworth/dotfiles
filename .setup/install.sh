@@ -29,7 +29,7 @@ fi
 ##  ██████  ███████ ███████ ██   ██    ██     ██████  ██      
 
 echo -e "\t Installing desktop environment:"
-LIST="arandr dunst feh lxappearance nemo parcellite pass pulseeffects pulsemixer qt5ct ranger rofi rxvt-unicode-256color xinit"
+LIST="arandr breeze dunst feh lxappearance nemo parcellite pass pulseeffects pulsemixer qt5ct ranger rofi rxvt-unicode-256color xinit"
 echo -ne "\t\t Installing basic utils ($(colorList $LIST)) ... "
 sudo apt-get -qq install $LIST &>>/tmp/dotfiles.log; echoDone
 

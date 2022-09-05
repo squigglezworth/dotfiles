@@ -1,8 +1,9 @@
+Xcursor.size: 32
+
 Xft.antialias : 1
 Xft.rgba      : none
 Xft.hintstyle : hintfull
 Xft.dpi       : 120
-
 
 URxvt.urgentOnBell:     true
 !! URxvt.bell-command:  cvlc --play-and-exit /home/squigz/dotfiles/beep2.mp3
@@ -27,7 +28,6 @@ URxvt.keysym.Control-Right : \033[1;5C
 URxvt.keysym.C-0xFF09      : \033[27;5;9~' '
 URxvt.keysym.M-Delete      : perl:matcher:select
 
-
 Dclock.slope: 0
 Dclock.Background: "#0A0A0A"
 
@@ -36,17 +36,12 @@ XTerm.fullscreen      : never
 XTerm.charClass       : 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 XTerm.on3Clicks       : regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
 XTerm.forceBoxChars   : true
-XTerm.faceName        : Hack:size=9
+XTerm.faceName        : Hack:size=10
 XTerm.metaSendsEscape : true
 XTerm.eightBitInput   : false
 XTerm.bellIsUrgent    : true
 
-xdaliclock.cycle       : false
-xdaliclock.seconds     : false
-xdaliclock.background  : #0A0A0A
-xdaliclock.borderWidth : 0
-xdaliclock.font        : BUILTIN1
-xdaliclock.mode        : 24
+Xautolock.locker: /home/squigz/dotfiles/bash/scripts/neo.sh
 
 *.cursorColor : rgb:b9/b9/b9
 *.colorUL     : rgb:5b/9b/6d

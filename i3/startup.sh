@@ -20,7 +20,6 @@ parcellite &
 
 # Configure stuff
 xset s off -dpms
-xrdb .Xresources
 
 # Setup mouse
 i="Kensington      Kensington Expert Mouse"

@@ -38,7 +38,7 @@ echoDone
 ##  ██████  ███████ ███████ ██   ██    ██     ██████  ██      
 
 echo -e "\t Configuring desktop environment:"
-echo -ne "\t\t Copying fonts ... "
+echo -ne "\t\t Configuring bash ... "
 rm -f $HOME/.bashrc $HOME/.bash_profile
 ln -fs $PWD/bash/bashrc $HOME/.bashrc
 ln -fs $PWD/bash/bash_profile $HOME/.bash_profile
@@ -48,19 +48,19 @@ echo -ne "\t\t Copying fonts ... "
 mkdir -p $HOME/.fonts
 gpg --decrypt $PWD/fonts/fonts.tar.gz.gpg > /tmp/fonts.tar.gz
 tar -xaf /tmp/fonts.tar.gz -C $HOME/.fonts/
+echoDone
 
 echo -ne "\t\t Copying icons ... "
 mkdir -p $HOME/.icons
 gpg --decrypt $PWD/icons/icons.tar.gz.gpg > /tmp/icons.tar.gz
 tar -xaf /tmp/icons.tar.gz -C $HOME/.icons/
+echoDone
 
 echo -ne "\t\t Configuring X ... "
 rm -f $HOME/.Xresources $HOME/.xinitrc
-ln -fs $PWD/X/Xresources $HOME/.Xresources; ln -fs $PWD/X/xinitrc $HOME/.xinitrc; echoDone
-
-echo -ne "\t\t Configuring bash ... "
-rm -f $HOME/.bashrc
-ln -fs $PWD/bash/bashrc $HOME/.bashrc; echoDone
+ln -fs $PWD/X/Xresources $HOME/.Xresources
+ln -fs $PWD/X/xinitrc $HOME/.xinitrc
+echoDone
 
 echo -ne "\t\t Configuring i3 ... "
 rm -rf $HOME/.i3/
@@ -121,7 +121,7 @@ echo -ne "\t\t Configuring picom ... "
 ln -fs $PWD/picom/picom.conf $HOME/.config/picom.conf; echoDone
 
 echo -ne "\t\t Configuring git ... "
-ln -fs $PWD/.gitconfig $HOME/.gitconfig
+ln -fs $PWD/.gitconfig $HOME/.gitconfig; echoDone
 
 
 ##  ███    ███ ██    ██ ███████ ██  ██████ 

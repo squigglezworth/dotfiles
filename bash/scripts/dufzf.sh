@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO cleaner way of going up a dir, hopefully with a keybind
+
 while [ 1 ]; do
     # Build a list of files/directories
     IFS=$'\n' f=('Move up one dir ..' $(cdu -risdhD "."/*))

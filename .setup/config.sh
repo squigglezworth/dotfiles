@@ -46,11 +46,13 @@ echoDone
 
 echo -ne "\t\t Copying fonts ... "
 mkdir -p $HOME/.fonts
-tar -xaf $PWD/fonts/fonts.tar.gz -C $HOME/.fonts/
+gpg --decrypt $PWD/fonts/fonts.tar.gz.gpg > /tmp/fonts.tar.gz
+tar -xaf /tmp/fonts.tar.gz -C $HOME/.fonts/
 
 echo -ne "\t\t Copying icons ... "
 mkdir -p $HOME/.icons
-tar -xaf $PWD/icons/icons.tar.gz -C $HOME/.icons/
+gpg --decrypt $PWD/icons/icons.tar.gz.gpg > /tmp/icons.tar.gz
+tar -xaf /tmp/icons.tar.gz -C $HOME/.icons/
 
 echo -ne "\t\t Configuring X ... "
 rm -f $HOME/.Xresources $HOME/.xinitrc

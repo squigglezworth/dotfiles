@@ -7,7 +7,7 @@ set -e
 ## ███████    ██    ███████    ██    ███████ ██      ██ 
 
 echo -ne "\t Installing system tools ... "
-sudo apt-get -qq install bash-completion apt-transport-https atop default-jre dnsutils htop iotop lshw net-tools nethogs procps software-properties-common tmux vim wget &>>/tmp/dotfiles.log
+sudo apt-get -qq install bash-completion apt-transport-https atop default-jre dnsutils gpg htop iotop lshw net-tools nethogs procps software-properties-common tmux vim wget &>>/tmp/dotfiles.log
 echoDone
 
 echo -ne "\t Enabling non-free/contrib repos ... "
@@ -31,7 +31,7 @@ fi
 echo -e "\t Installing desktop environment:"
 LIST="arandr breeze dunst feh lxappearance nemo parcellite pass pulseeffects pulsemixer qt5ct ranger rofi rxvt-unicode-256color xinit"
 echo -ne "\t\t Installing basic utils ($(colorList $LIST)) ... "
-sudo apt-get -qq install $LIST &>>/tmp/dotfiles.log; echoDone
+sudo apt-get -qq install "$LIST" &>>/tmp/dotfiles.log; echoDone
 
 echo -ne "\t\t Installing $(randColor "i3-gaps") ... "
 $PWD/i3/install.sh &>>/tmp/dotfiles.log; echoDone

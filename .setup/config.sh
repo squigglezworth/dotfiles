@@ -123,6 +123,9 @@ ln -fs $PWD/picom/picom.conf $HOME/.config/picom.conf; echoDone
 echo -ne "\t\t Configuring git ... "
 ln -fs $PWD/.gitconfig $HOME/.gitconfig; echoDone
 
+echo -ne "\t\t Configuring xdg ... "
+ln -fs $PWD/user-dirs.dirs $HOME/.config/; echoDone
+
 
 ##  ███    ███ ██    ██ ███████ ██  ██████ 
 ##  ████  ████ ██    ██ ██      ██ ██      

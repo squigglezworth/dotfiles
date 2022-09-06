@@ -1,4 +1,8 @@
 Local/*.sublime_session
-*Packages/
+Installed Packages/
+Packages/*
+! Packages/User
+Packages/User/Package Control.user-ca-bundle
+Packages/User/bh_core.sublime-settings
 Lib/
 Log/

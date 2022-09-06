@@ -40,7 +40,7 @@ alias ls="ls --group-directories-first --file-type -h --color=always"
 # Override `git log`
 git() {
     if [[ "$1" = "log" ]]; then
-        command git log --pretty=format:"%C(yellow)%h %Cgreen%ad%Cred%d %Creset%s%Cblue [%cn]" --decorate --date=relative "${@:2}"
+        command git log --pretty=format:"%C(yellow)%h %Cblue[%cn] %Cgreen%ad%C(auto)%d%n%n%Creset    %s%n" --decorate --date=relative "${@:2}"
     else
         command git "$@"
     fi

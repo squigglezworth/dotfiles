@@ -1,3 +1,4 @@
 Local/*.sublime_session
+*Packages/
 Lib/
 Log/

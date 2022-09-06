@@ -1,0 +1,47 @@
+[date-common]
+type = custom/script
+interval = 30
+label-font = 2
+
+[module/date-main]
+inherit = date-common
+interval = 1
+format-underline = ${default.main-color}
+format-prefix = " – "
+format-suffix = " – "
+label-foreground = #fff
+exec = "date +'%A  %B  %d, %r'"
+
+[module/date-aet]
+inherit = date-common
+format = AET: <label>
+format-prefix = " – "
+exec = "TZ='Australia/Melbourne' date +'%R'"
+
+[module/date-mt]
+inherit = date-common
+format = MT: <label>
+format-prefix = " – "
+format-suffix = " – "
+exec = "TZ='America/Denver' date +'%R'"
+
+[module/date-pt]
+inherit = date-common
+format = PT: <label>
+#format-prefix = " – "
+format-prefix = " "
+exec = "TZ='America/Los_Angeles' date +'%R'"
+
+[module/date-nl]
+inherit = date-common
+format = NL: <label>
+format-prefix = " – "
+exec = "TZ='Europe/Amsterdam' date +'%R'"
+date = %R
+
+[module/date-isl]
+inherit = date-common
+format = ISL: <label>
+format-prefix = " – "
+exec = "date -u +'%R'"
+date = %R

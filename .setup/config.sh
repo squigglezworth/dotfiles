@@ -55,9 +55,11 @@ gpg --decrypt $PWD/icons/icons.tar.gz.gpg > /tmp/icons.tar.gz
 tar -xaf /tmp/icons.tar.gz -C $HOME/.icons/
 echoDone
 
-echo -ne "\t\t Copying fonts ... "
+echo -ne "\t\t Configuring gtk ... "
 rm -rf $HOME/.config/gtk-3.0/
-ln -fs $PWD/gtk-3.0/ $HOME/.config/; echoDone
+ln -fs $PWD/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
+ln -fs $PWD/gtk/gtk-3.0/ $HOME/.config/
+ln -fs $PWD/mimeapps.list $HOME/.config/
 echoDone
 
 echo -ne "\t\t Configuring X ... "
@@ -79,10 +81,6 @@ ln -fs $PWD/feh $HOME/.fehbg; echoDone
 echo -ne "\t\t Configuring dunst ... "
 rm -rf $HOME/.config/dunst/
 ln -fs $PWD/dunst/ $HOME/.config/; echoDone
-
-# echo -ne "\t\t Configuring Firefox ... "
-# rm -rf $HOME/.mozilla/
-# mkdir -p $HOME/.mozilla; ln -fs $PWD/firefox/firefox/ $HOME/.mozilla/firefox; echoDone
 
 echo -ne "\t\t Configuring vim ... "
 rm -rf $HOME/.vim/ $HOME/.vimrc

@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale --randomize /mnt/disk-2/documents/wallpapers/*
+feh --no-fehbg --bg-fill '/mnt/disk-2/documents/wallpapers/JWST - Carina Nebula, NIRCam.png' '/mnt/disk-2/documents/wallpapers/Hubble - Westerlund 2 (Full-Res).jpg'

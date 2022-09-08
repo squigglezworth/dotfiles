@@ -6,7 +6,7 @@
 #
 # This script is destructive and you probably shouldn't run it
 
-set -ea
+set -a
 echo ".dotfiles init"
 if [[ "$@" != "auto" ]]; then
    read -p "This script will overwrite existing files. Are you sure you want to run it? (Yes)"

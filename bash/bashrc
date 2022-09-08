@@ -4,7 +4,7 @@
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/dotfiles/bash/colors ] && source ~/dotfiles/bash/colors
-[ -f /etc/bash_completion ] && source /etc/bash_completion
+[ -f /usr/share/bash-completion/bash_completion ] && source /usr/share/bash-completion/bash_completion
 
 export TZ="America/Toronto"
 export BROWSER="firefox"
@@ -13,7 +13,7 @@ export EDITOR="subl"
 PATH="$HOME/dotfiles/bash/scripts:$PATH"
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/go/bin:$PATH"
+PATH="/usr/loca/bin:$PATH"
 export PATH
 
 # use qt5ct to configure QT themes in i3wm

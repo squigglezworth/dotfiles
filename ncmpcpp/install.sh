@@ -3,7 +3,7 @@ set -e
 
 if [ ! ncmpcpp ]; then
     sudo apt-get -qq build-dep ncmpcpp
-    git clone -q https://github.com/ncmpcpp/ncmpcpp/ /tmp/ncmpcpp
+    git clone -q https://github.com/squigglezworth/ncmpcpp/ /tmp/ncmpcpp
     cd /tmp/ncmpcpp/
     ./autogen.sh
     ./configure

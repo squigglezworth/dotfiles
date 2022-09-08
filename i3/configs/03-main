@@ -15,15 +15,15 @@ focus_follows_mouse yes
 focus_on_window_activation none
 
 # Gaps
-workspace $workspace01 gaps outer 90
-workspace $workspace01 gaps bottom 150
+workspace $workspace01 gaps outer 150
+workspace $workspace01 gaps bottom 200
 workspace $workspace02 gaps outer 50
-workspace $workspace02 gaps bottom 90
+workspace $workspace02 gaps bottom 130
 workspace $workspace03 gaps horizontal 100
 workspace $workspace03 gaps vertical 50
-workspace $workspace03 gaps bottom 90
+workspace $workspace03 gaps bottom 130
 workspace $workspace04 gaps outer 50
-workspace $workspace04 gaps bottom 90
+workspace $workspace04 gaps bottom 130
 
 
 # Float some windows
@@ -43,7 +43,7 @@ for_window [class="^Steam$" instance="(^Friends$|Steam - News.*|.* - Chat|^Setti
 # Terminals & Stuff
 bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+Return exec urxvt -name floating
-bindsym Mod1+d exec "rofi -show blezz"
+bindsym Mod1+d exec "rofi -show blezz -blezz-config /home/squigz/.config/rofi-blezz/content"
 bindsym Mod1+p exec "rofi -sort -show pass:/home/squigz/.config/rofi/passmenu.sh"
 
 # Scratchpad stuff
@@ -59,7 +59,7 @@ for_window [class="^Zeal$"] floating enable, resize set 1000px 700 px, move posi
 for_window [class=".*"] border pixel 1
 
 # Reload config & notify user
-bindsym $mod+Shift+C exec "cat ~/.i3/configs/* > ~/.i3/config; i3-msg reload; notify-send 'i3 config reloaded'"
+bindsym $mod+Shift+C exec "cat ~/.i3/configs/* > ~/.i3/config; i3-msg reload; notify-send.sh 'i3 config reloaded'"
 
 # Kill the currently-focused window
 bindsym $mod+F12 exec "xdotool getwindowfocus windowkill"

@@ -6,6 +6,8 @@ assign [class="^firefox$"] $workspace02
 assign [class="^Pulseeffects$"] $workspace02
 assign [class="^Sublime_text$"] $workspace03
 assign [class="(^Steam$|^steam_app_.*$)"] $workspace04
+assign [class="steam"] $workspace04
+assign [class="Steam"] $workspace04
 assign [class="^plexmediaplayer$"] $workspace11
 
 

@@ -1,5 +1,4 @@
 #!/bin/bash
-pgrep -f pulsemixer && 
 i3-msg '[class="^URxvt$" instance="volume"] scratchpad show' || urxvt -name "volume" -e bash -c 'pulsemixer --color 1'
 
 #out=`xlsclients -l | grep volume`

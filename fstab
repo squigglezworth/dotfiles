@@ -1,4 +1,4 @@
-UUID=A659-D773 /mnt/usb/ auto defaults,nofail,uid=1000,gid=1000,umask=022 0 1
+UUID=A659-D773 /mnt/usb/ auto defaults,nofail,uid=1000,gid=1000,umask=077 0 1
 LABEL=Media /mnt/disk-1 auto defaults,nofail,uid=1000,gid=1000,umask=022 0 1
 LABEL=Games /mnt/disk-2 auto defaults,nofail,uid=1000,gid=1000,umask=022 0 1
 LABEL=wd-640-1 /mnt/disk-3 auto defaults,nofail,uid=1000,gid=1000,umask=022 0 1

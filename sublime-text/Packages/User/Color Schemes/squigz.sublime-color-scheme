@@ -1,0 +1,189 @@
+{
+    "name": "squigzy's color scheme",
+
+    "variables": {
+        "foreground": "#b9b9b9",
+        "background": "#181818",
+        "highlights": "#36362f",
+        "black": "#252525",
+        "br_black": "#3b3b3b",
+        "white": "#777777",
+        "br_white": "#dedede",
+        "red": "#ed4a46",
+        "br_red": "#ff5e56",
+        "green": "#70b433",
+        "br_green": "#83c746",
+        "yellow": "#dbb32d",
+        "br_yellow": "#efc541",
+        "blue": "#368aeb",
+        "br_blue": "#4f9cfe",
+        "magenta": "#eb6eb7",
+        "br_magenta": "#ff81ca",
+        "cyan": "#3fc5b7",
+        "br_cyan": "#56d8c9",
+        "orange": "#e67f43",
+        "br_orange": "#fa9153",
+        "violet": "#a580e2",
+        "br_violet": "#b891f55"
+    },
+
+    "globals": {
+        "foreground": "var(foreground)",
+        "background": "var(background)",
+        "invisibles": "var(highlights)",
+        "caret": "var(foreground)",
+        "block_caret": "var(foreground)",
+        "line_highlight": "var(highlights)",
+
+        // "misspelling": "",
+        // "fold_marker": "",
+        // "minimap_border": "",
+        // "accent": "var(br_blue)",
+        // "popup_css": "",
+        // "phantom_css": "",
+
+        // "gutter": "",
+        // "gutter_foreground": "",
+
+        "line_diff_width": "5",
+        "line_diff_added": "color(var(green) lightness(- 15%))",
+        "line_diff_modified": "color(var(yellow) lightness(- 15%))",
+        "line_diff_deleted": "color(var(red) lightness(- 15%))",
+
+        "selection": "color(var(highlights) lightness(+ 15%))",
+        // "selection_foreground": "",
+        // "selection_border": "",
+        // "selection_border_width": "",
+        // "inactive_selection": "",
+        // "inactive_selection_foreground": "",
+        // "selection_corner_style": "",
+        // "selection_corner_radius": "",
+
+        // "highlight": "",
+        // "find_highlight": "",
+        // "find_highlight_foreground": "",
+
+        "guide": "color(var(foreground) alpha(0.5))",
+        "active_guide": "var(foreground)",
+        "stack_guide": "color(var(foreground) alpha(0.5))",
+
+        // "brackets_options": "",
+        // "brackets_foreground": "",
+        // "brackets_contents_options": "",
+
+        // "tags_options": "",
+        // "tags_foreground": "",
+
+        // "shadow": "",
+        // "shadow_width": ""
+    },
+
+    "rules": [
+        {
+            "name": "Comment",
+            "scope": "comment",
+            "font_style": "italic",
+            "foreground": "#8a8a83"
+        },
+        {
+            "name": "String",
+            "scope": "string",
+            "foreground": "#7bbf3e"
+        },
+        {
+            "name": "Regexp",
+            "scope": "string.regexp",
+            "foreground": "#7bbf3e"
+        },
+        {
+            "name": "Number",
+            "scope": "constant.numeric",
+            "foreground": "#f38a4d"
+        },
+        {
+            "name": "Variable",
+            "scope": "variable.language, variable.other",
+            "foreground": "#4cd0c1"
+        },
+        {
+            "name": "Keyword",
+            "scope": "keyword",
+            "font_style": "bold",
+            "foreground": "#e6bc38"
+        },
+        {
+            "name": "Storage",
+            "scope": "storage",
+            "font_style": "italic",
+            "foreground": "#abaca6"
+        },
+        {
+            "name": "Class name",
+            "scope": "entity.name.class, entity.name.type.class",
+            "font_style": "bold",
+            "foreground": "#f1f2eb"
+        },
+        {
+            "name": "Function name",
+            "scope": "entity.name.function",
+            "font_style": "bold",
+            "foreground": "#f1f2eb"
+        },
+        {
+            "name": "Embedded code markers",
+            "scope": "punctuation.section.embedded.begin, punctuation.section.embedded.end",
+            "foreground": "#f87ac3"
+        },
+        {
+            "name": "Built-in constant",
+            "scope": "constant.language, meta.preprocessor",
+            "foreground": "#4cd0c1"
+        },
+        {
+            "name": "Support.construct",
+            "scope": "support.function.construct, keyword.other.new",
+            "foreground": "#b28bee"
+        },
+        {
+            "name": "User-defined constant",
+            "scope": "constant., constant.other",
+            "foreground": "#4cd0c1"
+        },
+        {
+            "name": "Function argument",
+            "scope": "variable.parameter",
+            "foreground": "#4cd0c1"
+        },
+        {
+            "name": "Library function",
+            "scope": "support.function",
+            "foreground": "#268BD2"
+        },
+        {
+            "name": "Continuation",
+            "scope": "punctuation.separator.continuation",
+            "foreground": "#D30102"
+        },
+        {
+            "name": "Library constant",
+            "scope": "support.constant"
+        },
+        {
+            "name": "Library class/type",
+            "scope": "support.type, support.class",
+            "foreground": "#b28bee"
+        },
+        {
+            "name": "Library Exception",
+            "scope": "support.type.exception",
+            "font_style": "bold",
+            "foreground": "#f38a4d"
+        },
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "font_style": "bold",
+            "foreground": "#fc5851"
+        }
+    ]
+}

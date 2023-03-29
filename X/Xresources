@@ -9,12 +9,12 @@ URxvt.urgentOnBell:     true
 !! URxvt.bell-command:  cvlc --play-and-exit /home/squigz/dotfiles/beep2.mp3
 
 URxvt.scrollBar   : false
-URxvt.font        : xft:Hack:style=Regular:size=12,Font Awesome
+URxvt.font        : xft:Hack:style=Regular:size=12,xft:Font Awesome 5 Pro
 URxvt.letterSpace : -1
 
 URxvt.perl-ext         : default,matcher-2,keyboard-select,unicode,bell-command,-searchable-scrollback
 URxvt.perl-lib         : /home/squigz/dotfiles/urxvt/
-URxvt.url-launcher     : /usr/bin/firefox
+URxvt.url-launcher     : /usr/local/bin/firefox
 URxvt.matcher-2.button : 1
 
 URxvt.imLocale    : en_US.UTF-8
@@ -47,19 +47,28 @@ Xautolock.locker: /home/squigz/dotfiles/bash/scripts/neo.sh
 *.colorUL     : rgb:5b/9b/6d
 *.background  : rgb:18/18/18
 *.foreground  : rgb:b9/b9/b9
+
+!! Black dark/light
 *.color0      : rgb:25/25/25
-*.color1      : rgb:ed/4a/46
-*.color2      : rgb:70/b4/33
-*.color3      : rgb:db/b3/2d
-*.color4      : rgb:36/8a/eb
-*.color5      : rgb:eb/6e/b7
-*.color6      : rgb:3f/c5/b7
-*.color7      : rgb:77/77/77
 *.color8      : rgb:3b/3b/3b
+!! Red dark/light
+*.color1      : rgb:ed/4a/46
 *.color9      : rgb:ff/5e/56
+!! Green dark/light
+*.color2      : rgb:70/b4/33
 *.color10     : rgb:83/c7/46
+!! Yellow dark/light
+*.color3      : rgb:db/b3/2d
 *.color11     : rgb:ef/c5/41
+!! Blue dark/light
+*.color4      : rgb:36/8a/eb
 *.color12     : rgb:4f/9c/fe
+!! Magenta dark/light
+*.color5      : rgb:eb/6e/b7
 *.color13     : rgb:ff/81/ca
+!! Cyan dark/light
+*.color6      : rgb:3f/c5/b7
 *.color14     : rgb:56/d8/c9
+!! White dark/light
+*.color7      : rgb:77/77/77
 *.color15     : rgb:de/de/de

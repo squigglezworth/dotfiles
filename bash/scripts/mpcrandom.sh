@@ -1,3 +1,3 @@
 #!/bin/bash
-#echo "$@" > ~/test    
+#echo "$@" > ~/test
 mpc search any "$1" | shuf | shuf | mpc add

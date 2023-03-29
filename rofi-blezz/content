@@ -4,7 +4,7 @@ act(run,,rofi -show run)
 dir(ut,Utilities)
 dir(g,Games)
 act(Firefox,,firefox)
-act(plex,,firefox --kiosk --new-window app.plex.tv/desktop -P plex)
+act(plex,,flatpak run tv.plex.PlexDesktop)
 
 Gaps Inner:
 act(+,Increase inner,i3-msg gaps inner current plus 5,reload)
@@ -25,7 +25,7 @@ act(2,achievements, firefox --new-tab http://bindingofisaacrebirth.gamepedia.com
 act(3,challenges,firefox --new-tab http://bindingofisaacrebirth.gamepedia.com/Challengese)
 
 Utilities:
-act(qr,,rofi -show qr)
+act(qr,,rofi -show qr:/home/squigz/.config/rofi/qr.sh)
 act(sticky,,stickytoggle)
 dir(gi,Gaps Inner)
 dir(go,Gaps Outer)

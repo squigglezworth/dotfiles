@@ -13,30 +13,26 @@ export EDITOR="subl"
 PATH="$HOME/dotfiles/bash/scripts:$PATH"
 PATH="$HOME/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
-PATH="/usr/loca/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
 export PATH
 
 # use qt5ct to configure QT themes in i3wm
 export QT_QPA_PLATFORMTHEME=qt5ct
 export LS_COLORS="$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
 export MANPAGER="less -i"
-export HISTSIZE=-1
-export HISTFILESIZE=-1
-export HISTCONTROL="ignoredups"
-export LESSHISTFILE="/dev/null"
 export PASSWORD_STORE_CLIP_TIME=125
 export FZF_DEFAULT_OPTS="--inline-info --header=──────────────────────────────── --color=16,info:0,header:236,prompt:236,hl:9,fg+:9 --reverse --height=10 --history-size=100000"
+# History settings
+export HISTSIZE=-1; export HISTFILESIZE=-1; export HISTCONTROL="ignoredups"; export LESSHISTFILE="/dev/null"
 
+alias venv.activate="source .venv/bin/activate"
+alias ls="ls --group-directories-first --file-type -h --color=always"
 alias arandr="arandr && ~/.fehbg"
 alias cls="clear"
 alias df="df -x tmpfs -x devtmpfs -x vfat -h"
-alias gs="git status"
-alias ga="git add"
-alias gl="git log"
-alias gc="git commit"
-alias gd="git diff"
-alias ls="ls --group-directories-first --file-type -h --color=always"
 
+# git aliases
+alias gs="git status"; alias ga="git add"; alias gl="git log"; alias gc="git commit"; alias gd="git diff"
 # Override `git log`
 git() {
     if [[ "$1" = "log" ]]; then
@@ -63,7 +59,13 @@ tmux() {
 
 # Prompt
 set_ps1() {
-    PS1="\[$BGreen\]\u@\H \[$BPurple\]\w\$(__git_ps1) > \[$Color_Off\]"
+    if test -z "$VIRTUAL_ENV"; then
+        VENV=""
+    else
+        VENV="${GREEN}(`basename \"$VIRTUAL_ENV\"`)${COLOR_NONE} "
+    fi
+    PS1="\[$BGreen\]\u@\H \[$BPurple\]\w\[$IGreen\]$(__git_ps1 " (%s\[$IGreen\])") \[$IPurple\]$VENV\n\[$BPurple\]> \[$Color_Off\]"
 }
+GIT_PS1_STATESEPARATOR="\[$Purple\] "; GIT_PS1_SHOWSTASHSTATE=1; GIT_PS1_SHOWDIRTYSTATE=1; GIT_PS1_SHOWUNTRACKEDFILES=1
 PROMPT_COMMAND=set_ps1
-GIT_PS1_SHOWDIRTYSTATE=1; GIT_PS1_SHOWUNTRACKEDFILES=1
+. "$HOME/.cargo/env"

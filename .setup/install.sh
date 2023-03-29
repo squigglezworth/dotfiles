@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
-## ███████ ██    ██ ███████ ████████ ███████ ███    ███ 
-## ██       ██  ██  ██         ██    ██      ████  ████ 
-## ███████   ████   ███████    ██    █████   ██ ████ ██ 
-##      ██    ██         ██    ██    ██      ██  ██  ██ 
-## ███████    ██    ███████    ██    ███████ ██      ██ 
+## ███████ ██    ██ ███████ ████████ ███████ ███    ███
+## ██       ██  ██  ██         ██    ██      ████  ████
+## ███████   ████   ███████    ██    █████   ██ ████ ██
+##      ██    ██         ██    ██    ██      ██  ██  ██
+## ███████    ██    ███████    ██    ███████ ██      ██
 
 echo -ne "\t Installing system tools ... "
 sudo apt-get -qq install bash-completion apt-transport-https atop default-jre dnsutils gpg kleopatra pinentry-qt libnotify-bin htop iotop lshw net-tools nethogs procps software-properties-common tmux vim wget &>>/tmp/dotfiles.log
@@ -22,14 +22,14 @@ if lspci | grep NVIDIA &>/dev/null; then
     echoDone
 fi
 
-##  ██████  ███████ ███████ ██   ██ ████████  ██████  ██████  
-##  ██   ██ ██      ██      ██  ██     ██    ██    ██ ██   ██ 
-##  ██   ██ █████   ███████ █████      ██    ██    ██ ██████  
-##  ██   ██ ██           ██ ██  ██     ██    ██    ██ ██      
-##  ██████  ███████ ███████ ██   ██    ██     ██████  ██      
+##  ██████  ███████ ███████ ██   ██ ████████  ██████  ██████
+##  ██   ██ ██      ██      ██  ██     ██    ██    ██ ██   ██
+##  ██   ██ █████   ███████ █████      ██    ██    ██ ██████
+##  ██   ██ ██           ██ ██  ██     ██    ██    ██ ██
+##  ██████  ███████ ███████ ██   ██    ██     ██████  ██
 
 echo -e "\t Installing desktop environment:"
-LIST="arandr breeze breeze-gtk-theme dunst feh flameshot fonts-hack fonts-noto-color-emoji lxappearance nemo parcellite polybar pass pulseeffects pulsemixer qt5ct ranger rofi rxvt-unicode-256color xinit"
+LIST="arandr breeze breeze-gtk-theme dunst feh flameshot fonts-hack fonts-noto-color-emoji lxappearance nemo parcellite polybar pass pulseeffects pulsemixer qt5ct ranger rofi rxvt-unicode-256color unclutter xinit"
 echo -ne "\t\t Installing basic utils ($(colorList $LIST)) ... "
 sudo apt-get -qq install $LIST &>>/tmp/dotfiles.log; echoDone
 
@@ -54,11 +54,11 @@ $PWD/picom/install.sh &>>/tmp/dotfiles.log; echoDone
 # echo -e "\t\t Installing $(randColor "rofi-blezz") ..."
 # $PWD/rofi-blezz/install.sh &>>/tmp/dotfiles.log; echoDone
 
-##  ███    ███ ██    ██ ███████ ██  ██████ 
-##  ████  ████ ██    ██ ██      ██ ██      
-##  ██ ████ ██ ██    ██ ███████ ██ ██      
-##  ██  ██  ██ ██    ██      ██ ██ ██      
-##  ██      ██  ██████  ███████ ██  ██████ 
+##  ███    ███ ██    ██ ███████ ██  ██████
+##  ████  ████ ██    ██ ██      ██ ██
+##  ██ ████ ██ ██    ██ ███████ ██ ██
+##  ██  ██  ██ ██    ██      ██ ██ ██
+##  ██      ██  ██████  ███████ ██  ██████
 
 echo -e "\t Installing music software:"
 echo -ne "\t\t Installing $(randColor "mpd") & $(randColor "beets") ... "
@@ -67,11 +67,11 @@ sudo apt-get -qq install mpd mpc mpdscribble beets &>>/tmp/dotfiles.log; echoDon
 echo -ne "\t\t Installing $(randColor "ncmpcpp") ... "
 $PWD/ncmpcpp/install.sh &>>/tmp/dotfiles.log; echoDone
 
-##  ███    ███ ██ ███████  ██████    
-##  ████  ████ ██ ██      ██         
-##  ██ ████ ██ ██ ███████ ██         
-##  ██  ██  ██ ██      ██ ██         
-##  ██      ██ ██ ███████  ██████ ██ 
+##  ███    ███ ██ ███████  ██████
+##  ████  ████ ██ ██      ██
+##  ██ ████ ██ ██ ███████ ██
+##  ██  ██  ██ ██      ██ ██
+##  ██      ██ ██ ███████  ██████ ██
 
 echo -e "\t Installing misc. software:"
 sudo apt-get -qq install deluge-gtk &>>/tmp/dotfiles.log

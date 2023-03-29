@@ -8,9 +8,9 @@ dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XA
 pulseeffects --gapplication-service &
 
 # Desktop utils & whatnot
-picom &
 polybar -r default &
 polybar -r scroller &
+sleep 0.5
 unclutter -idle 10 &
 dunst &
 flameshot &
@@ -23,11 +23,15 @@ xset s off -dpms
 
 # Setup mouse
 i="Kensington      Kensington Expert Mouse"
-xinput set-button-map "$i" 8 2 3 4 5 6 7 1
+# Bottom Left, Top Left, Bottom Right, Wheel Left, Wheel Right(?), ?, ?, Top Right
+# 1 - Left, 2 - Middle Click, 3 - Right, 4 - Wheel Up, 5 - Wheel Down
+# 6 - ?, 7 - Forward, 8 - Back
+xinput set-button-map "$i" 3 2 1 4 5 0 0 0
 xinput set-prop "$i" "libinput Accel Speed" -0.5
 
 # Everything else
 discord &
-/usr/bin/firefox &
+firefox &
 subl &
+/home/squigz/activitywatch/aw-qt &
 STEAM_COMPAT_MOUNTS=/mnt/disk-2/game-libraries/EVE/ steam &

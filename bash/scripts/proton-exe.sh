@@ -1,6 +1,6 @@
 #!/bin/bash
 # ID, exe
-STEAM_FOLDER=/mnt/disk-2/game-libraries/steam/steamapps
+STEAM_FOLDER=/home/squigz/.steam/steam/steamapps
 
 cd $STEAM_FOLDER/compatdata/$1/
 
@@ -8,4 +8,4 @@ export STEAM_COMPAT_CLIENT_INSTALL_PATH=/home/squigz/.steam
 export STEAM_COMPAT_DATA_PATH=$PWD
 export WINEPREFIX=$PWD/pfx
 
-$STEAM_FOLDER/common/Proton\ \-\ Experimental/proton run $2
+$STEAM_FOLDER/common/Proton\ 6.3/proton run $2
